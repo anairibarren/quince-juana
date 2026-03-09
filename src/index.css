@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.perspective {
+  perspective: 1200px;
+}
+
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  position: relative;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
