@@ -1,23 +1,61 @@
 import { Icon } from "@iconify/react"
+import videoHero from "../assets/hero-video.mp4"
 
 function Hero() {
   return (
     <section
       id="hero"
       aria-labelledby="hero-title"
-      className="min-h-[90vh] flex items-center justify-center bg-[#f5f5f5]"
+      className="
+      relative
+      overflow-hidden
+      min-h-[90vh]
+      flex
+      items-center
+      justify-center
+      bg-white
+      "
     >
-      <div className="max-w-6xl mx-auto px-6 w-full text-center md:text-left">
+
+      {/* VIDEO DE FONDO */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="
+        absolute
+        inset-0
+        w-full
+        h-full
+        object-cover
+        "
+      >
+        <source src={videoHero} type="video/mp4" />
+      </video>
+
+      {/* OVERLAY SUAVE PARA LEGIBILIDAD */}
+      <div
+        className="
+        absolute
+        inset-0
+        bg-white/70
+        "
+      />
+
+      {/* CONTENIDO */}
+      <div className="relative max-w-6xl mx-auto px-6 w-full">
 
         {/* TITULO */}
         <h1
           id="hero-title"
           className="
           font-extrabold
-          text-[45px]
+          text-[42px]
           leading-[1.08]
           text-[#1e2f5d]
           mb-6
+          mr-12
           md:text-[64px]
           "
         >
@@ -29,27 +67,27 @@ function Hero() {
           className="
           text-[16px]
           leading-[1.8]
-          font-light
-          text-[#8f8f99]
+          font-medium
+          text-[#6b7280]
           max-w-[520px]
-          mx-auto
-          md:mx-0
-          mb-7
+          mb-8
           "
         >
-          Te invito a celebrar una noche única. Será un momento lleno de magia, sueños y recuerdos inolvidables.
+          Te invito a celebrar una noche única.
+          Será un momento lleno de magia,
+          sueños y recuerdos inolvidables.
         </p>
 
-        {/* BOTON CTA */}
+        {/* BOTON */}
         <a
           href="#countdown"
-          aria-label="Explorar información del evento"
+          aria-label="Ir a la cuenta regresiva"
           className="
           inline-flex
           items-center
           justify-center
           gap-[10px]
-          px-7
+          px-8
           py-3
           rounded-full
           bg-[#1e2f5d]
@@ -58,13 +96,20 @@ function Hero() {
           text-[17px]
           w-full
           max-w-[340px]
+          transition
+          hover:scale-105
           "
         >
-          Explorar
-          <Icon icon="mdi:arrow-right" width="20" />
+          Despeguemos
+
+          <Icon
+            icon="mdi:airplane-takeoff"
+            width="20"
+          />
         </a>
 
       </div>
+
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 function Countdown() {
 
@@ -20,6 +20,9 @@ function Countdown() {
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [isVisible, setIsVisible] = useState(false)
+
+  const sectionRef = useRef(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,56 +32,80 @@ function Countdown() {
     return () => clearInterval(timer)
   }, [])
 
+  /* SCROLL REVEAL */
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        threshold: 0.3
+      }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section
-      id="countdown"
-      className="py-28"
-      aria-labelledby="countdown-title"
-    >
+    <section >
 
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* TITULO + TEXTO */}
-        <div className="text-center md:text-left">
+        <div className="text-center">
+
+          {/* TITULO */}
 
           <h2
             id="countdown-title"
-            className="
-            font-extrabold
-            text-[46px]
-            leading-[1.08]
-            text-[#1e2f5d]
-            mb-6
-            "
+            className={`
+              font-extrabold
+              text-[42px]
+              md:text-[52px]
+              leading-[1.08]
+              text-[#1e2f5d]
+              mb-6
+              ${isVisible ? "animate-slide-left" : "opacity-0"}
+            `}
           >
             Te invito a celebrar conmigo
           </h2>
 
+          {/* TEXTO */}
+
           <p
-            className="
-            text-[16px]
-            leading-[1.8]
-            font-light
-            text-[#8f8f99]
-            max-w-[520px]
-            mx-auto
-            md:mx-0
-            mb-16
-            "
+            className={`
+              text-[16px]
+              leading-[1.8]
+              font-light
+              text-[#8f8f99]
+              max-w-[520px]
+              mx-auto
+              mb-16
+              ${isVisible ? "animate-slide-right" : "opacity-0"}
+            `}
           >
-            Falta muy poco para celebrar una noche llena de magia, emoción y
-            recuerdos inolvidables.
+            Falta muy poco para iniciar un viaje lleno de emociones
+            donde comienza la noche más soñada.
           </p>
 
         </div>
 
-
         {/* CONTADOR */}
+
         <div
           className="
           flex
           justify-center
           gap-8
+          md:gap-14
           text-center
           text-[#1e2f5d]
           "
@@ -98,7 +125,6 @@ function Countdown() {
   )
 }
 
-
 function TimeBox({ number, label }) {
   return (
     <div className="flex flex-col items-center">
@@ -106,7 +132,7 @@ function TimeBox({ number, label }) {
       <span
         className="
         text-4xl
-        md:text-5xl
+        md:text-6xl
         font-extrabold
         "
       >
@@ -116,6 +142,7 @@ function TimeBox({ number, label }) {
       <span
         className="
         text-xs
+        md:text-sm
         tracking-widest
         font-semibold
         mt-2

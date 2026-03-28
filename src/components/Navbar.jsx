@@ -41,8 +41,8 @@ function Navbar({ menuOpen, setMenuOpen }) {
               className="w-10 h-8 object-contain"
             />
 
-            <span className="font-semibold text-md hidden sm:block">
-              Mis 15
+            <span className="font-semibold text-md hidden sm:block tracking-wide">
+              Juana · Mis quince
             </span>
           </a>
 
@@ -54,7 +54,11 @@ function Navbar({ menuOpen, setMenuOpen }) {
               href="#hero"
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
-              <Icon icon="mdi:home-outline" width="18" />
+              <Icon
+                icon="mdi:home-outline"
+                width="18"
+                className="md:hidden"
+              />
               Inicio
             </a>
 
@@ -62,7 +66,11 @@ function Navbar({ menuOpen, setMenuOpen }) {
               href="#info"
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
-              <Icon icon="mdi:information-outline" width="18" />
+              <Icon
+                icon="mdi:information-outline"
+                width="18"
+                className="md:hidden"
+              />
               Sobre el evento
             </a>
 
@@ -70,16 +78,12 @@ function Navbar({ menuOpen, setMenuOpen }) {
               href="#countdown"
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
-              <Icon icon="mdi:clock-outline" width="18" />
+              <Icon
+                icon="mdi:clock-outline"
+                width="18"
+                className="md:hidden"
+              />
               Cuenta regresiva
-            </a>
-
-            <a
-              href="#asistencia"
-              className="flex items-center gap-1 font-medium text-[#1e2f5d]"
-            >
-              <Icon icon="mdi:account-check-outline" width="18" />
-              Asistencia
             </a>
 
           </div>
@@ -193,14 +197,6 @@ function Navbar({ menuOpen, setMenuOpen }) {
             Cuenta regresiva
           </a>
 
-          <a
-            href="#asistencia"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-3 text-[16px] font-medium text-[#1e2f5d]"
-          >
-            <Icon icon="mdi:account-check-outline" width="20" />
-            Asistencia
-          </a>
 
         </nav>
 
