@@ -95,9 +95,7 @@ function Hero() {
           font-semibold
           text-[17px]
           w-full
-          max-w-[340px]
-          transition
-          hover:scale-105
+          max-w-[340px]        
           "
         >
           Despeguemos

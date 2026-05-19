@@ -33,17 +33,54 @@ function Navbar({ menuOpen, setMenuOpen }) {
           <a
             href="#hero"
             aria-label="Ir al inicio"
-            className="flex items-center gap-2 text-[#1e2f5d]"
+            className="flex items-center gap-3 text-[#1e2f5d]"
           >
+
+            {/* PASAPORTE */}
             <img
               src={passport}
               alt="Pasaporte del evento"
               className="w-10 h-8 object-contain"
             />
 
-            <span className="font-semibold text-md hidden sm:block tracking-wide">
-              Juana · Mis quince
-            </span>
+            {/* TEXTO */}
+            <div
+              className="
+                flex
+                items-center
+                gap-2
+                leading-none
+              "
+            >
+
+              {/* JUANA */}
+              <span
+                className="
+                  text-[20px]
+                "
+              >
+                Juana
+              </span>
+
+              {/* AVION */}
+              <Icon
+                icon="mdi:airplane-takeoff"
+                width="20"
+                className="text-[#1e2f5d]"
+              />
+
+              {/* MIS XV */}
+              <span
+                className="
+                  text-[20px]
+                  text-[#1e2f5d]
+                "
+              >
+                Mis XV
+              </span>
+
+            </div>
+
           </a>
 
 

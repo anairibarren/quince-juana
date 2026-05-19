@@ -1,303 +1,246 @@
-import { useState } from "react"
-import { Icon } from "@iconify/react"
+import { useEffect, useRef, useState } from "react"
 
-import mapamundi from "../assets/mapamundi.png"
-import dresscode from "../assets/dresscode.png"
-import dresscodeBlanco from "../assets/dresscode-blanco.png"
-import regalo from "../assets/regalo.png"
+import calendar from "../assets/calendar.webp"
+import pin from "../assets/pin.gif"
+import diamond from "../assets/diamond.webp"
 
-
-function FlipCard({
-  title,
-  highlight,
-  description,
-  backTitle,
-  backContent,
-  link,
+function InfoBlock({
+  background,
+  textColor,
   image,
-  backImage
+  title,
+  children,
+  showDivider = false,
+  button = false,
+  link
 }) {
-  const [flipped, setFlipped] = useState(false)
-
-  // tamaños dinámicos según imagen
-
-  const imageSize =
-    image === mapamundi
-      ? "w-[150px] h-[150px] md:w-[170px] md:h-[170px]"
-      : image === regalo
-      ? "w-[90px] h-[90px] md:w-[100px] md:h-[100px]"
-      : "w-[120px] h-[120px] md:w-[150px] md:h-[150px]"
-
   return (
-    <div className="flex justify-center py-8">
+    <div
+      className={`
+        w-full
+        rounded-[24px]
+        px-8
+        py-10
+        flex
+        flex-col
+        items-center
+        justify-center
+        text-center
+        shadow-[0_10px_30px_#00000012]
+        transition
+      `}
+      style={{
+        backgroundColor: background,
+        color: textColor,
+        fontFamily: "Montserrat, sans-serif"
+      }}
+    >
+      {/* ICONO */}
 
-      <div className="w-full perspective">
+      <img
+        src={image}
+        alt={title}
+        className="
+          w-[90px]
+          h-[90px]
+          md:w-[110px]
+          md:h-[110px]
+          object-contain
+          mb-6
+        "
+      />
 
-        <div className={`flip-card w-full h-[480px] ${flipped ? "flipped" : ""}`}>
+      {/* TITULO */}
 
-          {/* FRONT */}
+      <h3
+        className="
+          text-[20px]
+          md:text-[22px]
+          font-semibold
+          tracking-[0.2em]
+          mb-4
+        "
+      >
+        {title}
+      </h3>
 
-          <div className="flip-face bg-white rounded-[24px] px-[32px] py-[24px] flex flex-col justify-between shadow-lg">
+      {/* LINEA DIVISORA */}
 
-            <h3
-              className="
-              text-[28px]
-              md:text-[30px]
-              font-bold
-              leading-[1.25]
-              text-[#1e2f5d]
-              mt-2
-              "
-            >
-              {title} <span className="text-[#a0b8e1]">{highlight}</span>
-            </h3>
+      {showDivider && (
+        <div
+          className="
+            w-[80px]
+            h-[2px]
+            my-4
+          "
+          style={{
+            backgroundColor: textColor
+          }}
+        />
+      )}
 
-            {/* IMAGEN */}
+      {/* CONTENIDO */}
 
-            <div className="flex justify-center items-center">
-
-              <img
-                src={image}
-                alt={highlight}
-                className={`${imageSize} object-contain`}
-              />
-
-            </div>
-
-            {/* TEXTO + BOTON */}
-
-            <div className="flex items-center justify-between gap-4">
-
-              <p
-                className="
-                max-w-[240px]
-                text-[15px]
-                font-light
-                text-[#8f8f99]
-                leading-[1.6]
-                "
-              >
-                {description}
-              </p>
-
-              <button
-                aria-label="Ver más información"
-                onClick={() => setFlipped(true)}
-                className="
-                w-[44px]
-                h-[44px]
-                rounded-full
-                bg-[#1e2f5d]
-                text-white
-                flex items-center justify-center
-                shrink-0
-                hover:scale-105
-                transition
-                "
-              >
-                <Icon icon="mdi:arrow-right" width="22" />
-              </button>
-
-            </div>
-
-          </div>
-
-
-          {/* BACK */}
-
-          <div className="flip-face flip-back bg-[#1e2f5d] text-white rounded-[24px] px-[28px] py-[24px] flex flex-col justify-between">
-
-            <div>
-
-              <h4
-                className="
-                text-[22px]
-                md:text-[24px]
-                font-extrabold
-                mb-4
-                mt-2
-                "
-              >
-                {backTitle}
-              </h4>
-
-              <div
-                className="
-                leading-relaxed
-                text-[15px]
-                "
-                dangerouslySetInnerHTML={{ __html: backContent }}
-              />
-
-              {/* IMAGEN BACK */}
-
-              {backImage && (
-                <div className="flex justify-center mt-6">
-
-                  <img
-                    src={backImage}
-                    alt="detalle"
-                    className="
-                    w-[120px]
-                    h-[120px]
-                    object-contain
-                    "
-                  />
-
-                </div>
-              )}
-
-              {/* MAPA */}
-
-              {link && (
-                <div className="mt-2 space-y-4">
-
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                    inline-block
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-white
-                    text-[#1e2f5d]
-                    font-semibold
-                    text-sm
-                    "
-                  >
-                    Ver ubicación
-                  </a>
-
-                  <div className="w-full h-[180px] rounded-xl overflow-hidden shadow-md">
-
-                    <iframe
-                      src="https://www.google.com/maps?q=H%27Omara%20Eventos&output=embed"
-                      width="100%"
-                      height="100%"
-                      loading="lazy"
-                      title="Mapa del evento"
-                    />
-
-                  </div>
-
-                </div>
-              )}
-
-            </div>
-
-            {/* BOTON VOLVER */}
-
-            <div className="flex justify-end">
-
-              <button
-                aria-label="Volver a la tarjeta"
-                onClick={() => setFlipped(false)}
-                className="
-                w-[44px]
-                h-[44px]
-                mt-2
-                rounded-full
-                bg-white
-                text-[#1e2f5d]
-                flex items-center justify-center
-                hover:scale-105
-                transition
-                "
-              >
-                <Icon icon="mdi:arrow-left" width="22" />
-              </button>
-
-            </div>
-
-          </div>
-
-        </div>
-
+      <div
+        className="
+          text-[16px]
+          md:text-[18px]
+          leading-[1.7]
+          space-y-2
+        "
+      >
+        {children}
       </div>
 
+      {/* BOTON */}
+
+      {button && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            mt-6
+            px-6
+            py-3
+            rounded-full
+            text-sm
+            font-semibold
+            transition
+            hover:scale-105
+          "
+          style={{
+            backgroundColor:
+              background === "#ffffff"
+                ? "#1e2f5d"
+                : "#ffffff",
+            color:
+              background === "#ffffff"
+                ? "#ffffff"
+                : "#1e2f5d"
+          }}
+        >
+          COMO LLEGAR
+        </a>
+      )}
     </div>
   )
 }
 
-
 function InfoCards() {
+
+  const [isVisible, setIsVisible] = useState(false)
+
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      {
+        threshold: 0.2
+      }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="info" className="py-16 flex justify-center">
+    <section
+      id="info"
+      ref={sectionRef}
+      className="py-6 flex justify-center"
+    >
 
       <div
-        className="
-        max-w-[1100px]
-        w-full
-        grid
-        gap-6
-        grid-cols-1
-        md:grid-cols-3
-        px-5
-        "
+        className={`
+          max-w-[1100px]
+          w-full
+          grid
+          gap-6
+          grid-cols-1
+          md:grid-cols-3
+          px-2
+          ${isVisible ? "animate-slide-left" : "opacity-0"}
+        `}
       >
 
         <h2 className="sr-only">
-          Sobre el evento
+          Información del evento
         </h2>
 
-        {/* UBICACION */}
+        {/* BLOQUE 1 — CUANDO */}
 
-        <FlipCard
-          title="Cómo llegar al"
-          highlight="evento"
-          description="Encontrá aquí el salón y el mapa para llegar fácilmente."
-          backTitle="Lugar de la fiesta"
-          backContent="
-          El cumpleaños será en
-          <strong style='font-weight:700; color:#a0b8e1;'>
-          H'Omara Eventos
-          </strong>.
-          Te espero para vivir una noche inolvidable.
-          "
+        <InfoBlock
+          background="#1e2f5d"
+          textColor="#ffffff"
+          image={calendar}
+          title="¿CUÁNDO?"
+        >
+          <p>
+            10 DE OCTUBRE DE 2026
+          </p>
+
+          <p>
+            | 21:00hs |
+          </p>
+        </InfoBlock>
+
+        {/* BLOQUE 2 — DONDE */}
+
+        <InfoBlock
+          background="#ffffff"
+          textColor="#1e2f5d"
+          image={pin}
+          title="¿DÓNDE?"
+          button={true}
           link="https://maps.app.goo.gl/icPzJ4cVTqQ5YLLa7"
-          image={mapamundi}
-        />
+        >
+          <p>
+            H'OMARA EVENTOS
+          </p>
+        </InfoBlock>
 
-        {/* DRESS CODE */}
+        {/* BLOQUE 3 — DRESS CODE */}
 
-        <FlipCard
-          title="Dress"
-          highlight="Code"
-          description="Descubrí el estilo pensado para esta noche especial."
-          backTitle="Dress Code"
-          backContent="
-          La vestimenta será
-          <span style='font-weight:700; color:#a0b8e1;'>
-          Elegante Sport
-          </span>.
-          Prepará tu mejor look para celebrar esta noche tan especial.
-          "
-          image={dresscode}
-          backImage={dresscodeBlanco}
-        />
+        <InfoBlock
+          background="#1e2f5d"
+          textColor="#ffffff"
+          image={diamond}
+          title="DRESS CODE"
+          showDivider={true}
+        >
 
-        {/* REGALO */}
+          <div className="space-y-3">
 
-        <FlipCard
-          title="Ideas de"
-          highlight="regalo"
-          description="Descubrí las opciones que pensé."
-          backTitle="Ideas de regalo"
-          backContent="
-          Si deseás tener un detalle,
-          habrá una
-          <strong style='font-weight:700; color:#a0b8e1;'>
-          urna en el evento
-          </strong>
-          o podés hacerlo por transferencia.<br/><br/>
+            <p>
+              ELEGANTE SPORT
+            </p>
 
-          Alias:<br/>
-          <strong style='font-weight:700; color:#a0b8e1; text:12px'>jua.iri</strong>
-          "
-          image={regalo}
-        />
+            <p
+              className="
+                text-[13px]
+                md:text-[14px]
+                text-white
+                max-w-[340px]
+                mx-auto
+              "
+            >
+              Evitar los colores:
+              blanco, azul y plateado
+            </p>
+
+          </div>
+
+        </InfoBlock>
 
       </div>
 

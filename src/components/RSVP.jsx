@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react"
+import sobre from "../assets/rsvp.gif"
 
 function RSVP() {
 
@@ -15,8 +16,9 @@ function RSVP() {
     <section
       id="asistencia"
       className="
+      bg-white
       flex justify-center
-      py-[72px]
+      py-[50px]
       transition-all
       duration-700
       "
@@ -28,54 +30,69 @@ function RSVP() {
         w-full
         px-6
         text-center
-        md:text-left
         "
       >
 
+        {/* ANIMACION SOBRE */}
+
+        <div className="flex justify-center mb-[30px]">
+
+          <img
+            src={sobre}
+            alt="Confirmar asistencia"
+            className="
+            w-[120px]
+            animate-bounce
+            "
+          />
+
+        </div>
+
         {/* TITULO */}
+
         <h2
           className="
           text-[36px]
           font-extrabold
           text-[#1e2f5d]
           leading-[1.15]
+          uppercase
           "
         >
           Confirmá tu asistencia
         </h2>
 
         {/* LINEA */}
+
         <div
           className="
-          w-[120px]
+          w-[200px]
           h-[6px]
           rounded-full
           bg-[#a0b8e1]
           mt-[14px]
           mb-[28px]
           mx-auto
-          md:mx-0
           "
         />
 
-        {/* TEXTO */}
+        {/* FECHA */}
+
         <p
           className="
-          max-w-[680px]
           text-[16px]
           leading-[1.8]
           font-light
           text-[#8f8f99]
-          mx-auto
-          md:mx-0
+          mb-[32px]
           "
         >
-          Me encantaría poder compartir esta noche tan especial
-          con vos. Confirmá tu asistencia para que podamos celebrar juntos y disfrutar de una fiesta inolvidable.
+          ANTES DEL 30 DE SEPTIEMBRE 2026
         </p>
 
         {/* BOTON */}
-        <div className="flex justify-center md:justify-start mt-[32px]">
+
+        <div className="flex justify-center">
 
           <a
             href={whatsappLink}
@@ -91,7 +108,7 @@ function RSVP() {
             bg-[#1e2f5d]
             text-white
             text-[17px]
-            font-semibold
+            font-regular
             cursor-pointer
             no-underline
             "
@@ -107,6 +124,7 @@ function RSVP() {
     </section>
 
   )
+
 }
 
 export default RSVP
