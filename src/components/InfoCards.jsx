@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 
-import calendar from "../assets/calendar.webp"
+import calendar from "../assets/calendar.WEBP"
 import pin from "../assets/pin.gif"
-import diamond from "../assets/diamond.webp"
+import diamond from "../assets/diamond.WEBP"
 
 function InfoBlock({
   background,
