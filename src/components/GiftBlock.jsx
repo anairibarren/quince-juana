@@ -5,39 +5,57 @@ import gift from "../assets/gift.GIF"
 function GiftModal({ isOpen, onClose }) {
 
   const alias = "jua.iri"
+
   const banco = "Mercado Pago"
 
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
+
     try {
+
       await navigator.clipboard.writeText(alias)
+
       setCopied(true)
 
       setTimeout(() => {
+
         setCopied(false)
+
       }, 2000)
 
     } catch (err) {
+
       console.error("Error al copiar")
+
     }
+
   }
 
-  // cerrar con ESC
+  // CERRAR CON ESC
 
   useEffect(() => {
+
     const handleKey = (e) => {
+
       if (e.key === "Escape") {
+
         onClose()
+
       }
+
     }
 
     if (isOpen) {
+
       document.addEventListener("keydown", handleKey)
+
     }
 
     return () => {
+
       document.removeEventListener("keydown", handleKey)
+
     }
 
   }, [isOpen, onClose])
@@ -45,6 +63,7 @@ function GiftModal({ isOpen, onClose }) {
   if (!isOpen) return null
 
   return (
+
     <div
       onClick={onClose}
       className="
@@ -164,7 +183,6 @@ function GiftModal({ isOpen, onClose }) {
               text-[#1e2f5d]
               font-semibold
               text-md
-              rounded-full
             "
           >
             {copied ? "Alias copiado" : "Copiar alias"}
@@ -183,7 +201,6 @@ function GiftModal({ isOpen, onClose }) {
               text-white
               font-semibold
               text-md
-              rounded-full
             "
           >
             Cerrar
@@ -194,7 +211,9 @@ function GiftModal({ isOpen, onClose }) {
       </div>
 
     </div>
+
   )
+
 }
 
 function GiftBlock() {
@@ -202,99 +221,182 @@ function GiftBlock() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
+
     <section
       id="gift"
       className="
-        py-6
-        flex
-        justify-center
+        py-0
+        mb-8
       "
     >
 
+      {/* BLOQUE FRASE */}
+
       <div
         className="
-          max-w-[700px]
-          w-full
-          mx-auto
+          bg-white
+          py-16
           px-6
-          text-center
-          py-12
-          shadow-[0_10px_30px_#00000012]
         "
-        style={{
-          backgroundColor: "#1e2f5d",
-          color: "#ffffff",
-          fontFamily: "Montserrat, sans-serif"
-        }}
       >
 
-        {/* ICONO */}
-
-        <img
-          src={gift}
-          alt="Regalo"
+        <div
           className="
-            w-[90px]
-            h-[90px]
-            md:w-[110px]
-            md:h-[110px]
-            object-contain
+            max-w-4xl
             mx-auto
-            mb-6
-          "
-        />
-
-        {/* TITULO */}
-
-        <h2
-          className="
-            text-[22px]
-            md:text-[24px]
-            font-semibold
-            tracking-[0.2em]
-            mb-6
+            flex
+            flex-col
+            items-center
+            text-center
           "
         >
-          REGALO
-        </h2>
 
-        {/* TEXTO */}
+          {/* LINEA SUPERIOR */}
 
-        <p
+          <div
+            className="
+              w-[90px]
+              h-[2px]
+              bg-[#1e2f5d]
+              rounded-full
+              mb-8
+            "
+          />
+
+          {/* TEXTO */}
+
+          <p
+            className="
+              text-[#1e2f5d]
+              text-[20px]
+              md:text-[28px]
+              leading-[1.8]
+              tracking-[0.08em]
+              uppercase
+              max-w-3xl
+            "
+            style={{
+              fontFamily: "Montserrat, sans-serif"
+            }}
+          >
+            Hagamos que sea una noche{" "}
+            <span className="font-extrabold">
+              ¡inolvidable!
+            </span>
+          </p>
+
+          {/* LINEA INFERIOR */}
+
+          <div
+            className="
+              w-[90px]
+              h-[2px]
+              bg-[#1e2f5d]
+              rounded-full
+              mt-8
+            "
+          />
+
+        </div>
+
+      </div>
+
+
+      {/* BLOQUE REGALO */}
+
+      <div
+        className="
+          flex
+          justify-center
+        "
+      >
+
+        <div
           className="
-            text-[15px]
-            md:text-[16px]
-            leading-[1.8]
-            max-w-[520px]
+            max-w-[700px]
+            w-full
             mx-auto
+            px-6
+            text-center
+            py-12
           "
+          style={{
+            backgroundColor: "#1e2f5d",
+            color: "#ffffff",
+            fontFamily: "Montserrat, sans-serif"
+          }}
         >
-          NADA ES MÁS IMPORTANTE QUE TU PRESENCIA,
-          PERO SI DESEAS HACERME UN REGALO
-          SERÁ RECIBIDO CON MUCHO AMOR,
-          TAMBIÉN PUEDES HACERLO
-          EN LA SIGUIENTE CUENTA.
-        </p>
 
-        {/* BOTON */}
+          {/* ICONO */}
 
-        <button
-          onClick={() => setIsOpen(true)}
-          className="
-            mt-8
-            px-8
-            py-3
-            rounded-full
-            bg-white
-            text-[#1e2f5d]
-            font-semibold
-            text-sm
-            transition
-            hover:scale-105
-          "
-        >
-          VER CUENTA
-        </button>
+          <img
+            src={gift}
+            alt="Regalo"
+            className="
+              w-[90px]
+              h-[90px]
+              md:w-[110px]
+              md:h-[110px]
+              object-contain
+              mx-auto
+              mb-6
+            "
+          />
+
+          {/* TITULO */}
+
+          <h2
+            className="
+              text-[22px]
+              md:text-[24px]
+              font-semibold
+              tracking-[0.2em]
+              mb-6
+            "
+          >
+            REGALO
+          </h2>
+
+          {/* TEXTO */}
+
+          <p
+            className="
+              text-[15px]
+              md:text-[16px]
+              leading-[1.8]
+              max-w-[520px]
+              mx-auto
+            "
+          >
+            NADA ES MÁS IMPORTANTE QUE TU PRESENCIA,
+            PERO SI DESEAS HACERME UN REGALO
+            SERÁ RECIBIDO CON MUCHO AMOR,
+            TAMBIÉN PUEDES HACERLO
+            EN LA SIGUIENTE CUENTA.
+          </p>
+
+          {/* BOTON */}
+
+          <button
+            onClick={() => setIsOpen(true)}
+            className="
+              mt-8
+              px-8
+              py-3
+              bg-white
+              text-[#1e2f5d]
+              font-semibold
+              text-sm
+              tracking-[0.12em]
+              uppercase
+              transition
+              hover:opacity-90
+            "
+          >
+            VER CUENTA
+          </button>
+
+        </div>
 
       </div>
 
@@ -304,7 +406,9 @@ function GiftBlock() {
       />
 
     </section>
+
   )
+
 }
 
 export default GiftBlock

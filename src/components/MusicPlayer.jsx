@@ -15,7 +15,6 @@ function MusicPlayer({ menuOpen }) {
     audio.loop = true
     audio.volume = 0.5
 
-    // 🔹 Intento de autoplay (puede fallar, no pasa nada)
     const tryAutoplay = async () => {
       try {
         await audio.play()
@@ -28,7 +27,6 @@ function MusicPlayer({ menuOpen }) {
 
     tryAutoplay()
 
-    // 🔥 Fallback: primer interacción del usuario
     const startOnFirstInteraction = async () => {
       if (hasStarted) return
 
@@ -86,10 +84,10 @@ function MusicPlayer({ menuOpen }) {
         aria-label="Controlar música"
         className="
           fixed
-          right-[24px]
-          bottom-[24px]
-          w-[52px]
-          h-[52px]
+          right-[40px]
+          bottom-[50px]
+          w-[60px]
+          h-[60px]
           rounded-full
           bg-[#1e2f5d]
           text-white
@@ -103,8 +101,12 @@ function MusicPlayer({ menuOpen }) {
         "
       >
         <Icon
-          icon={isPlaying ? "mdi:music" : "mdi:music-off"}
-          width="24"
+          icon={
+            isPlaying
+              ? "mdi:pause"
+              : "mdi:play"
+          }
+          width="30"
         />
       </button>
     </>

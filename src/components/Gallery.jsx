@@ -47,7 +47,7 @@ function Gallery() {
             md:h-[400px]
             object-cover
             transition-all
-            duration-200
+            duration-100
           "
         />
 

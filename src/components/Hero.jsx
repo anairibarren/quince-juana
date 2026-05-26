@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react"
 import videoHero from "../assets/hero-video.mp4"
+import fotoInicio from "../assets/foto-inicio.JPG"
 
 function Hero() {
   return (
@@ -9,11 +10,8 @@ function Hero() {
       className="
       relative
       overflow-hidden
-      min-h-[90vh]
-      flex
-      items-center
-      justify-center
       bg-white
+      pb-24
       "
     >
 
@@ -34,7 +32,7 @@ function Hero() {
         <source src={videoHero} type="video/mp4" />
       </video>
 
-      {/* OVERLAY SUAVE PARA LEGIBILIDAD */}
+      {/* OVERLAY */}
       <div
         className="
         absolute
@@ -44,67 +42,91 @@ function Hero() {
       />
 
       {/* CONTENIDO */}
-      <div className="relative max-w-6xl mx-auto px-6 w-full">
+      <div className="relative z-10">
 
-        {/* TITULO */}
-        <h1
-          id="hero-title"
+        {/* BLOQUE TEXO */}
+        <div
           className="
-          font-extrabold
-          text-[42px]
-          leading-[1.08]
-          text-[#1e2f5d]
-          mb-6
-          mr-12
-          md:text-[64px]
+          max-w-6xl
+          mx-auto
+          px-6
+          md:px-10
+          pt-28
+          md:pt-36
           "
         >
-          Un viaje muy especial comienza
-        </h1>
 
-        {/* PARRAFO */}
-        <p
-          className="
-          text-[16px]
-          leading-[1.8]
-          font-medium
-          text-[#6b7280]
-          max-w-[520px]
-          mb-8
-          "
-        >
-          Te invito a celebrar una noche única.
-          Será un momento lleno de magia,
-          sueños y recuerdos inolvidables.
-        </p>
+          {/* TITULO */}
+          <h1
+            id="hero-title"
+            className="
+            font-extrabold
+            text-[40px]
+            leading-[1.08]
+            text-[#1e2f5d]
+            mb-6
+            max-w-[700px]
+            md:text-[64px]
+            "
+          >
+            Un viaje muy especial comienza
+          </h1>
 
-        {/* BOTON */}
-        <a
-          href="#countdown"
-          aria-label="Ir a la cuenta regresiva"
-          className="
-          inline-flex
-          items-center
-          justify-center
-          gap-[10px]
-          px-8
-          py-3
-          rounded-full
-          bg-[#1e2f5d]
-          text-white
-          font-semibold
-          text-[17px]
-          w-full
-          max-w-[340px]        
-          "
-        >
-          Despeguemos
+          {/* PARRAFO */}
+          <p
+            className="
+            text-[18px]
+            leading-[1.8]
+            font-medium
+            text-[#6b7280]
+            max-w-[520px]
+            mb-8
+            "
+          >
+            Te invito a celebrar una noche única. Será un momento lleno de magia, sueños y recuerdos inolvidables.
+          </p>
 
-          <Icon
-            icon="mdi:airplane-takeoff"
-            width="20"
+          {/* BOTON */}
+          <a
+            href="#countdown"
+            aria-label="Ir a la cuenta regresiva"
+            className="
+            inline-flex
+            items-center
+            justify-center
+            gap-[8px]
+            px-8
+            py-3
+            rounded-full
+            bg-[#1e2f5d]
+            text-white
+            font-semibold
+            text-[16px]
+            w-full
+            max-w-[340px]
+            "
+          >
+            Despeguemos
+
+            <Icon
+              icon="mdi:airplane-takeoff"
+              width="20"
+            />
+          </a>
+        </div>
+
+        {/* IMAGEN FULL WIDTH */}
+        <div className="mt-20">
+          <img
+            src={fotoInicio}
+            alt=""
+            className="
+            w-full
+            h-auto
+            object-cover
+            "
           />
-        </a>
+        </div>
 
       </div>
 

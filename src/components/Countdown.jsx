@@ -95,10 +95,10 @@ function Countdown() {
     <section
       id="countdown"
       ref={sectionRef}
-      className="pb-24"
+      className="pb-8"
     >
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div>
 
         {/* TITULO */}
 
@@ -107,8 +107,8 @@ function Countdown() {
             flex
             flex-col
             items-center
-            mb-14
             text-center
+            mb-5
             ${isVisible ? "animate-slide-left" : "opacity-0"}
           `}
         >
@@ -117,27 +117,30 @@ function Countdown() {
 
           <span
             className="
-              text-[40px]
-              md:text-[24px]
+              text-[30px]
+              md:text-[22px]
               tracking-[0.35em]
               text-[#1e2f5d]
+              font-medium
+              uppercase
             "
             style={{
               fontFamily: "Montserrat, sans-serif"
             }}
           >
-            MIS XV
+            MIS <strong className="font-bold">XV</strong>
           </span>
+
 
           {/* NOMBRE */}
 
           <h2
             className="
-              text-[100px]
-              md:text-[72px]
+              text-[92px]
+              md:text-[110px]
               leading-none
               text-[#1e2f5d]
-              mt-2
+              -mt-1
             "
             style={{
               fontFamily: "Allura"
@@ -154,11 +157,10 @@ function Countdown() {
           className="
             flex
             justify-center
-            gap-2
-            md:gap-8
+            gap-3
             text-center
-            text-white
             flex-wrap
+            mb-24
           "
           aria-live="polite"
         >
@@ -175,6 +177,75 @@ function Countdown() {
 
       </div>
 
+
+      {/* FRASE */}
+
+      <div
+        className="
+          bg-[#1e2f5d]
+          py-10
+          px-6
+        "
+      >
+
+        <div
+          className="
+            max-w-4xl
+            mx-auto
+            flex
+            flex-col
+            items-center
+            text-center
+          "
+        >
+
+          {/* LINEA SUPERIOR */}
+
+          <div
+            className="
+              w-[90px]
+              h-[2px]
+              bg-white
+              rounded-full
+              mb-8
+            "
+          />
+
+          {/* TEXTO */}
+
+          <p
+            className="
+              text-white
+              text-[18px]
+              md:text-[22px]
+              leading-[2]
+              tracking-[0.08em]
+              uppercase
+              max-w-3xl
+            "
+            style={{
+              fontFamily: "Montserrat, sans-serif"
+            }}
+          >
+            Hay momentos que no se pueden borrar, personas que no se pueden olvidar y recuerdos como estos que siempre voy a atesorar.
+          </p>
+
+          {/* LINEA INFERIOR */}
+
+          <div
+            className="
+              w-[90px]
+              h-[2px]
+              bg-white
+              rounded-full
+              mt-8
+            "
+          />
+
+        </div>
+
+      </div>
+
     </section>
 
   )
@@ -186,12 +257,7 @@ function TimeBox({ number, label }) {
 
     <div
       className="
-        min-w-[80px]
-        md:min-w-[110px]
-        px-4
-        py-4
-        rounded-[16px]
-        bg-[#1e2f5d]
+        min-w-[95px]
         flex
         flex-col
         items-center
@@ -201,9 +267,9 @@ function TimeBox({ number, label }) {
       <span
         className="
           text-4xl
-          md:text-4xl
+          md:text-5xl
           font-bold
-          text-white
+          text-[#1e2f5d]
         "
         style={{
           fontFamily: "Montserrat, sans-serif"
@@ -214,11 +280,11 @@ function TimeBox({ number, label }) {
 
       <span
         className="
-          text-xs
-          md:text-sm
-          tracking-widest
-          mt-2
-          text-white
+          text-[12px]
+          font-semibold
+          tracking-[0.25em]
+          mt-3
+          text-[#1e2f5d]
         "
         style={{
           fontFamily: "Montserrat, sans-serif"

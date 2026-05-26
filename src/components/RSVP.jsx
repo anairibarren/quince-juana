@@ -21,6 +21,7 @@ function RSVP() {
       py-[50px]
       transition-all
       duration-700
+      mb-8
       "
     >
 
@@ -52,7 +53,7 @@ function RSVP() {
 
         <h2
           className="
-          text-[36px]
+          text-[30px]
           font-extrabold
           text-[#1e2f5d]
           leading-[1.15]
@@ -107,7 +108,7 @@ function RSVP() {
             rounded-full
             bg-[#1e2f5d]
             text-white
-            text-[17px]
+            text-[18px]
             font-regular
             cursor-pointer
             no-underline

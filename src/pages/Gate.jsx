@@ -3,75 +3,145 @@ import musica from "../assets/musica.mp3"
 import { Icon } from "@iconify/react"
 
 function Gate({ onEnter }) {
+
   const audioRef = useRef(null)
+
   const [loading, setLoading] = useState(false)
+
   const [fadeOut, setFadeOut] = useState(false)
 
   const handleEnter = async () => {
+
     const audio = audioRef.current
+
     if (!audio) return
 
     setLoading(true)
 
     try {
+
       audio.loop = true
       audio.volume = 0.5
 
       await audio.play()
 
-      // 👉 inicia transición
       setFadeOut(true)
 
-      // espera animación y entra
       setTimeout(() => {
+
         onEnter()
+
       }, 600)
 
     } catch (err) {
+
       console.log("Error audio", err)
+
       setLoading(false)
+
     }
+
   }
 
   return (
+
     <div
       className={`
-        fixed inset-0 
-        flex flex-col items-center justify-center 
-        bg-[#0f172a] text-white
-        text-center px-6
-        transition-opacity duration-700
+        fixed
+        inset-0
+        flex
+        flex-col
+        items-center
+        justify-center
+        bg-white
+        text-[#1e2f5d]
+        text-center
+        px-6
+        transition-opacity
+        duration-700
         ${fadeOut ? "opacity-0" : "opacity-100"}
       `}
     >
+
       <audio ref={audioRef}>
         <source src={musica} type="audio/mpeg" />
       </audio>
 
-      <h1 className="text-3xl font-light mb-2">
-        ✨ Invitación de Juana XV
+      {/* TITULO */}
+
+      <h1
+        className="
+          text-[40px]
+          md:text-[58px]
+          font-semibold
+          tracking-[0.15em]
+          uppercase
+          mb-4
+        "
+        style={{
+          fontFamily: "Montserrat, sans-serif"
+        }}
+      >
+        Mis XV Juana
       </h1>
 
-      <p className="text-sm opacity-70 mb-8">
-        Tocá para entrar con música
+      {/* FRASE */}
+
+      <p
+        className="
+          text-[14px]
+          md:text-[16px]
+          leading-[2]
+          tracking-[0.2em]
+          uppercase
+          max-w-[800px]
+          mb-12
+        "
+        style={{
+          fontFamily: "Montserrat, sans-serif"
+        }}
+      >
+        La vida es un viaje, no un destino.
+        <br />
+        Ingresa a mi aventura.
       </p>
+
+      {/* BOTON */}
 
       <button
         onClick={handleEnter}
         className="
-          px-6 py-3
-          rounded-full
-          bg-white text-black
-          font-medium
-          flex items-center gap-2
-          hover:scale-105 transition
+          px-10
+          py-4
+          bg-[#1e2f5d]
+          text-white
+          uppercase
+          tracking-[0.15em]
+          font-semibold
+          flex
+          items-center
+          gap-3
+          transition
+          hover:opacity-90
         "
+        style={{
+          fontFamily: "Montserrat, sans-serif"
+        }}
       >
-        <Icon icon="mdi:music" width="20" />
-        {loading ? "Entrando..." : "Entrar"}
+
+        <Icon
+          icon="mdi:airplane-takeoff"
+          width="22"
+        />
+
+        {loading ? "Ingresando..." : "Ingresar"}
+
       </button>
+
     </div>
+
   )
+
 }
 
 export default Gate

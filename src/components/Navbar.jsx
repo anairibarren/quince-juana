@@ -11,7 +11,32 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
   const whatsappLink = `https://wa.me/${phone}?text=${message}`
 
+  // SCROLL COUNTDOWN
+
+  const scrollToCountdown = () => {
+
+    const section = document.getElementById("countdown")
+
+    if (!section) return
+
+    const yOffset = -120
+
+    const y =
+      section.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    })
+
+    setMenuOpen(false)
+
+  }
+
   return (
+
     <header className="fixed top-4 left-0 w-full z-50 flex justify-center">
 
       <div className="w-full max-w-6xl mx-4">
@@ -19,17 +44,20 @@ function Navbar({ menuOpen, setMenuOpen }) {
         <nav
           aria-label="Navegación principal"
           className="
-          flex items-center justify-between
-          px-5
-          h-16
-          bg-white
-          rounded-full
-          shadow-[0_16px_30px_rgba(15,23,42,0.08)]
-          backdrop-blur-md
+            flex
+            items-center
+            justify-between
+            px-5
+            h-16
+            bg-white
+            rounded-full
+            shadow-[0_16px_30px_rgba(15,23,42,0.08)]
+            backdrop-blur-md
           "
         >
 
           {/* LOGO */}
+
           <a
             href="#hero"
             aria-label="Ir al inicio"
@@ -37,6 +65,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
           >
 
             {/* PASAPORTE */}
+
             <img
               src={passport}
               alt="Pasaporte del evento"
@@ -44,6 +73,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
             />
 
             {/* TEXTO */}
+
             <div
               className="
                 flex
@@ -54,6 +84,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
             >
 
               {/* JUANA */}
+
               <span
                 className="
                   text-[20px]
@@ -63,6 +94,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
               </span>
 
               {/* AVION */}
+
               <Icon
                 icon="mdi:airplane-takeoff"
                 width="20"
@@ -70,6 +102,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
               />
 
               {/* MIS XV */}
+
               <span
                 className="
                   text-[20px]
@@ -85,62 +118,76 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
 
           {/* NAV DESKTOP */}
+
           <div className="hidden md:flex flex-1 justify-center items-center gap-6">
 
             <a
               href="#hero"
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
+
               <Icon
                 icon="mdi:home-outline"
                 width="18"
                 className="md:hidden"
               />
+
               Inicio
+
             </a>
 
             <a
               href="#info"
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
+
               <Icon
                 icon="mdi:information-outline"
                 width="18"
                 className="md:hidden"
               />
+
               Sobre el evento
+
             </a>
 
-            <a
-              href="#countdown"
+            <button
+              onClick={scrollToCountdown}
               className="flex items-center gap-1 font-medium text-[#1e2f5d]"
             >
+
               <Icon
                 icon="mdi:clock-outline"
                 width="18"
                 className="md:hidden"
               />
+
               Cuenta regresiva
-            </a>
+
+            </button>
 
           </div>
 
 
           {/* BOTON CONFIRMAR DESKTOP */}
+
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             className="
-            hidden md:flex
-            ml-8
-            px-7 py-2
-            rounded-full
-            text-sm font-semibold
-            bg-[#1e2f5d]
-            text-white
-            hover:opacity-90
-            transition
+              hidden
+              md:flex
+              ml-8
+              px-7
+              py-2
+              rounded-full
+              text-sm
+              font-semibold
+              bg-[#1e2f5d]
+              text-white
+              hover:opacity-90
+              transition
             "
           >
             Confirmar asistencia
@@ -148,23 +195,29 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
 
           {/* HAMBURGER */}
+
           <button
             aria-label="Abrir menú"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(true)}
             className="
-            md:hidden
-            flex flex-col
-            items-center
-            justify-center
-            gap-[5px]
-            w-9 h-9
-            rounded-full
-            bg-white
+              md:hidden
+              flex
+              flex-col
+              items-center
+              justify-center
+              gap-[5px]
+              w-9
+              h-9
+              rounded-full
+              bg-white
             "
           >
+
             <span className="w-5 h-[2px] bg-black"></span>
+
             <span className="w-5 h-[2px] bg-black"></span>
+
           </button>
 
         </nav>
@@ -173,35 +226,43 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
 
       {/* OVERLAY */}
+
       {menuOpen && (
+
         <div
           className="fixed inset-0 bg-black/20 z-40"
           aria-hidden="true"
           onClick={() => setMenuOpen(false)}
         />
+
       )}
 
 
       {/* MOBILE DRAWER */}
+
       <div
         className={`
-        fixed
-        top-0 right-0 bottom-0
-        w-[min(320px,78vw)]
-        bg-white
-        rounded-l-3xl
-        p-6
-        flex flex-col
-        justify-between
-        shadow-[-18px_0_40px_rgba(15,23,42,0.32)]
-        transition-transform
-        duration-300
-        z-50
-        ${menuOpen ? "translate-x-0" : "translate-x-full"}
+          fixed
+          top-0
+          right-0
+          bottom-0
+          w-[min(320px,78vw)]
+          bg-white
+          rounded-l-3xl
+          p-6
+          flex
+          flex-col
+          justify-between
+          shadow-[-18px_0_40px_rgba(15,23,42,0.32)]
+          transition-transform
+          duration-300
+          z-50
+          ${menuOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
 
         {/* LINKS */}
+
         <nav
           aria-label="Menú móvil"
           className="flex flex-col gap-8 mt-10"
@@ -212,8 +273,11 @@ function Navbar({ menuOpen, setMenuOpen }) {
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-3 text-[16px] font-medium text-[#1e2f5d]"
           >
+
             <Icon icon="mdi:home-outline" width="20" />
+
             Inicio
+
           </a>
 
           <a
@@ -221,37 +285,44 @@ function Navbar({ menuOpen, setMenuOpen }) {
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-3 text-[16px] font-medium text-[#1e2f5d]"
           >
+
             <Icon icon="mdi:information-outline" width="20" />
+
             Sobre el evento
+
           </a>
 
-          <a
-            href="#countdown"
-            onClick={() => setMenuOpen(false)}
+          <button
+            onClick={scrollToCountdown}
             className="flex items-center gap-3 text-[16px] font-medium text-[#1e2f5d]"
           >
-            <Icon icon="mdi:clock-outline" width="20" />
-            Cuenta regresiva
-          </a>
 
+            <Icon icon="mdi:clock-outline" width="20" />
+
+            Cuenta regresiva
+
+          </button>
 
         </nav>
 
 
         {/* BOTON CONFIRMAR */}
+
         <a
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
           className="
-          w-full
-          flex items-center justify-center
-          bg-[#1e2f5d]
-          text-white
-          font-semibold
-          py-3
-          rounded-full
+            w-full
+            flex
+            items-center
+            justify-center
+            bg-[#1e2f5d]
+            text-white
+            font-semibold
+            py-3
+            rounded-full
           "
         >
           Confirmar asistencia
@@ -260,7 +331,9 @@ function Navbar({ menuOpen, setMenuOpen }) {
       </div>
 
     </header>
+
   )
+
 }
 
 export default Navbar

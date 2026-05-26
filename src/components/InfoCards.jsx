@@ -14,19 +14,21 @@ function InfoBlock({
   button = false,
   link
 }) {
+
   return (
+
     <div
       className={`
         w-full
-        rounded-[24px]
+        rounded-none
         px-8
-        py-10
+        mt-8
+        py-12
         flex
         flex-col
         items-center
         justify-center
         text-center
-        shadow-[0_10px_30px_#00000012]
         transition
       `}
       style={{
@@ -35,6 +37,7 @@ function InfoBlock({
         fontFamily: "Montserrat, sans-serif"
       }}
     >
+
       {/* ICONO */}
 
       <img
@@ -95,36 +98,59 @@ function InfoBlock({
       {/* BOTON */}
 
       {button && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
-            mt-6
-            px-6
-            py-3
-            rounded-full
-            text-sm
-            font-semibold
-            transition
-            hover:scale-105
-          "
-          style={{
-            backgroundColor:
-              background === "#ffffff"
-                ? "#1e2f5d"
-                : "#ffffff",
-            color:
-              background === "#ffffff"
-                ? "#ffffff"
-                : "#1e2f5d"
-          }}
-        >
-          COMO LLEGAR
-        </a>
+
+        <div className="w-full flex flex-col items-center">
+
+          {/* LINEA */}
+
+          <div
+            className="
+              w-[80px]
+              h-[2px]
+              my-4
+            "
+            style={{
+              backgroundColor: textColor
+            }}
+          />
+
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              tracking-[0.15em]
+              uppercase
+              transition
+              hover:opacity-90
+            "
+            style={{
+              backgroundColor:
+                background === "#ffffff"
+                  ? "#1e2f5d"
+                  : "#ffffff",
+
+              color:
+                background === "#ffffff"
+                  ? "#ffffff"
+                  : "#1e2f5d"
+            }}
+          >
+            COMO LLEGAR
+          </a>
+
+        </div>
+
       )}
+
     </div>
+
   )
+
 }
 
 function InfoCards() {
@@ -134,41 +160,50 @@ function InfoCards() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
+
     const observer = new IntersectionObserver(
+
       ([entry]) => {
+
         if (entry.isIntersecting) {
+
           setIsVisible(true)
           observer.disconnect()
+
         }
+
       },
+
       {
         threshold: 0.2
       }
+
     )
 
     if (sectionRef.current) {
+
       observer.observe(sectionRef.current)
+
     }
 
     return () => observer.disconnect()
+
   }, [])
 
   return (
+
     <section
       id="info"
       ref={sectionRef}
-      className="py-6 flex justify-center"
+      className="py-0"
     >
 
       <div
         className={`
-          max-w-[1100px]
           w-full
           grid
-          gap-6
           grid-cols-1
           md:grid-cols-3
-          px-2
           ${isVisible ? "animate-slide-left" : "opacity-0"}
         `}
       >
@@ -185,6 +220,7 @@ function InfoCards() {
           image={calendar}
           title="¿CUÁNDO?"
         >
+
           <p>
             10 DE OCTUBRE DE 2026
           </p>
@@ -192,6 +228,7 @@ function InfoCards() {
           <p>
             | 21:00hs |
           </p>
+
         </InfoBlock>
 
         {/* BLOQUE 2 — DONDE */}
@@ -204,9 +241,11 @@ function InfoCards() {
           button={true}
           link="https://maps.app.goo.gl/icPzJ4cVTqQ5YLLa7"
         >
+
           <p>
             H'OMARA EVENTOS
           </p>
+
         </InfoBlock>
 
         {/* BLOQUE 3 — DRESS CODE */}
@@ -227,7 +266,7 @@ function InfoCards() {
 
             <p
               className="
-                text-[13px]
+                text-[15px]
                 md:text-[14px]
                 text-white
                 max-w-[340px]
@@ -245,7 +284,9 @@ function InfoCards() {
       </div>
 
     </section>
+
   )
+
 }
 
 export default InfoCards
