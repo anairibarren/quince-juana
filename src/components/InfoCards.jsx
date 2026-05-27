@@ -105,13 +105,14 @@ function InfoBlock({
 
           <div
             className="
-              w-[80px]
-              h-[2px]
-              my-4
+              w-[100px]
+              h-[4px]
+              bg-[#a0b8e1]
+              mt-[14px]
+              mb-[20px]
+              mx-auto
+              rounded-full
             "
-            style={{
-              backgroundColor: textColor
-            }}
           />
 
           <a

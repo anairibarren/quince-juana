@@ -71,7 +71,7 @@ function Gate({ onEnter }) {
 
       <h1
         className="
-          text-[40px]
+          text-[35px]
           md:text-[58px]
           font-semibold
           tracking-[0.15em]
@@ -89,7 +89,7 @@ function Gate({ onEnter }) {
 
       <p
         className="
-          text-[14px]
+          text-[12px]
           md:text-[16px]
           leading-[2]
           tracking-[0.2em]

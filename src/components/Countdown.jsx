@@ -257,7 +257,7 @@ function TimeBox({ number, label }) {
 
     <div
       className="
-        min-w-[95px]
+        min-w-[80px]
         flex
         flex-col
         items-center
@@ -267,7 +267,6 @@ function TimeBox({ number, label }) {
       <span
         className="
           text-4xl
-          md:text-5xl
           font-bold
           text-[#1e2f5d]
         "

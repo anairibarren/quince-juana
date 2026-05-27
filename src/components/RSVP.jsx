@@ -16,21 +16,22 @@ function RSVP() {
     <section
       id="asistencia"
       className="
-      bg-white
-      flex justify-center
-      py-[50px]
-      transition-all
-      duration-700
-      mb-8
+        bg-white
+        flex
+        justify-center
+        py-[50px]
+        transition-all
+        duration-700
+        mb-8
       "
     >
 
       <div
         className="
-        max-w-[900px]
-        w-full
-        px-6
-        text-center
+          max-w-[900px]
+          w-full
+          px-6
+          text-center
         "
       >
 
@@ -42,8 +43,8 @@ function RSVP() {
             src={sobre}
             alt="Confirmar asistencia"
             className="
-            w-[120px]
-            animate-bounce
+              w-[120px]
+              animate-bounce
             "
           />
 
@@ -53,12 +54,15 @@ function RSVP() {
 
         <h2
           className="
-          text-[30px]
-          font-extrabold
-          text-[#1e2f5d]
-          leading-[1.15]
-          uppercase
+            text-[30px]
+            font-extrabold
+            text-[#1e2f5d]
+            leading-[1.15]
+            uppercase
           "
+          style={{
+            fontFamily: "Montserrat, sans-serif"
+          }}
         >
           Confirmá tu asistencia
         </h2>
@@ -67,29 +71,41 @@ function RSVP() {
 
         <div
           className="
-          w-[200px]
-          h-[6px]
-          rounded-full
-          bg-[#a0b8e1]
-          mt-[14px]
-          mb-[28px]
-          mx-auto
+            w-[200px]
+            h-[6px]
+            bg-[#a0b8e1]
+            mt-[14px]
+            mb-[28px]
+            mx-auto
+            rounded-full
           "
         />
 
-        {/* FECHA */}
+        {/* TEXTO */}
 
-        <p
+        <div
           className="
-          text-[16px]
-          leading-[1.8]
-          font-light
-          text-[#8f8f99]
-          mb-[32px]
+            text-[16px]
+            leading-[1.5]
+            text-[#6b7280]
+            mb-[38px]
+            max-w-[700px]
+            mx-auto
           "
+          style={{
+            fontFamily: "Montserrat, sans-serif"
+          }}
         >
-          ANTES DEL 30 DE SEPTIEMBRE 2026
-        </p>
+
+          <p className="uppercase tracking-[0.08em]">
+            Antes del 30 de septiembre 2026
+          </p>
+
+          <p className="text-sm mt-2">
+            En caso de tener alguna restricción alimentaria, por favor informarlo al confirmar asistencia.
+          </p>
+
+        </div>
 
         {/* BOTON */}
 
@@ -100,22 +116,31 @@ function RSVP() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-            inline-flex
-            items-center
-            gap-[10px]
-            px-[28px]
-            py-[12px]
-            rounded-full
-            bg-[#1e2f5d]
-            text-white
-            text-[18px]
-            font-regular
-            cursor-pointer
-            no-underline
+              inline-flex
+              items-center
+              gap-[10px]
+              px-[32px]
+              py-[14px]
+              bg-[#1e2f5d]
+              text-white
+              text-[16px]
+              
+              tracking-[0.12em]
+              font-regular
+              rounded-full
+              cursor-pointer
             "
+            style={{
+              fontFamily: "Montserrat, sans-serif"
+            }}
           >
             Confirmar asistencia
-            <Icon icon="mdi:arrow-right" width="20" />
+
+            <Icon
+              icon="mdi:arrow-right"
+              width="20"
+            />
+
           </a>
 
         </div>

@@ -43,8 +43,7 @@ function Gallery() {
           alt={`Foto del book ${current + 1}`}
           className="
             w-full
-            h-[400px]
-            md:h-[400px]
+            h-auto
             object-cover
             transition-all
             duration-100
