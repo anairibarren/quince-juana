@@ -35,7 +35,7 @@ function Hero() {
         relative
         overflow-hidden
         bg-white
-        pb-24
+        pb-10
       "
     >
 
