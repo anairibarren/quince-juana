@@ -4,7 +4,7 @@ import gift from "../assets/gift.GIF"
 
 function GiftModal({ isOpen, onClose }) {
 
-  const alias = "jua.iri"
+  const alias = "Jua.Iribarren"
 
   const banco = "Mercado Pago"
 
@@ -181,8 +181,12 @@ function GiftModal({ isOpen, onClose }) {
               py-3
               bg-white
               text-[#1e2f5d]
+              px-8
               font-semibold
-              text-md
+              text-sm
+              tracking-[0.10rem]
+              uppercase              
+              rounded-full
             "
           >
             {copied ? "Alias copiado" : "Copiar alias"}
@@ -195,12 +199,17 @@ function GiftModal({ isOpen, onClose }) {
             className="
               mt-4
               w-full
-              py-3
               border
               border-white
               text-white
-              font-semibold
               text-md
+              px-8
+              py-3
+              font-semibold
+              tracking-[0.10rem]
+              text-sm
+              uppercase              
+              rounded-full
             "
           >
             Cerrar
@@ -361,18 +370,15 @@ function GiftBlock() {
 
           <p
             className="
-              text-[15px]
-              md:text-[16px]
-              leading-[1.8]
+              text-[16px]
+              md:text-[18px]
+              leading-[1.7]
+              space-y-2
               max-w-[520px]
               mx-auto
             "
           >
-            NADA ES MÁS IMPORTANTE QUE TU PRESENCIA,
-            PERO SI DESEAS HACERME UN REGALO
-            SERÁ RECIBIDO CON MUCHO AMOR,
-            TAMBIÉN PUEDES HACERLO
-            EN LA SIGUIENTE CUENTA.
+            Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta.
           </p>
 
           {/* BOTON */}
@@ -381,16 +387,16 @@ function GiftBlock() {
             onClick={() => setIsOpen(true)}
             className="
               mt-8
-              px-8
-              py-3
               bg-white
               text-[#1e2f5d]
-              font-semibold
+              px-8
+              py-3
+              font-bold
               text-sm
               tracking-[0.12em]
               uppercase
               transition
-              hover:opacity-90
+              rounded-full
             "
           >
             VER CUENTA

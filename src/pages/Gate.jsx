@@ -1,10 +1,10 @@
-import { useRef, useState } from "react"
-import musica from "../assets/musica.mp3"
+import { useState } from "react"
 import { Icon } from "@iconify/react"
 
-function Gate({ onEnter }) {
-
-  const audioRef = useRef(null)
+function Gate({
+  onEnter,
+  startMusic
+}) {
 
   const [loading, setLoading] = useState(false)
 
@@ -12,18 +12,11 @@ function Gate({ onEnter }) {
 
   const handleEnter = async () => {
 
-    const audio = audioRef.current
-
-    if (!audio) return
-
     setLoading(true)
 
     try {
 
-      audio.loop = true
-      audio.volume = 0.5
-
-      await audio.play()
+      await startMusic()
 
       setFadeOut(true)
 
@@ -62,10 +55,6 @@ function Gate({ onEnter }) {
         ${fadeOut ? "opacity-0" : "opacity-100"}
       `}
     >
-
-      <audio ref={audioRef}>
-        <source src={musica} type="audio/mpeg" />
-      </audio>
 
       {/* TITULO */}
 

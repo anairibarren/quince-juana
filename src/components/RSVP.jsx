@@ -102,7 +102,7 @@ function RSVP() {
           </p>
 
           <p className="text-sm mt-2">
-            En caso de tener alguna restricción alimenticia, por favor informarlo al confirmar asistencia.
+            En caso de tener alguna restricción alimentaria, por favor informarlo al confirmar asistencia.
           </p>
 
         </div>
@@ -119,15 +119,17 @@ function RSVP() {
               inline-flex
               items-center
               gap-[10px]
-              px-[32px]
-              py-[14px]
               bg-[#1e2f5d]
               text-white
               text-[16px]
-              
-              tracking-[0.12em]
               font-regular
               rounded-full
+              px-9
+              py-4
+              font-semibold
+              text-sm
+              tracking-[0.10rem]
+              uppercase
               cursor-pointer
             "
             style={{

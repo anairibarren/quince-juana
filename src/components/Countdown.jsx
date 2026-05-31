@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 
 function Countdown() {
 
-  const eventDate = new Date("2026-10-10T00:00:00")
+  const eventDate = new Date("2026-10-10T21:00:01")
 
   const calculateTimeLeft = () => {
 

@@ -138,9 +138,7 @@ function Hero() {
               font-semibold
               text-[16px]
               w-full
-              max-w-[340px]
-              transition
-              hover:opacity-90
+              max-w-[300px]
             "
           >
 

@@ -120,14 +120,14 @@ function InfoBlock({
             target="_blank"
             rel="noopener noreferrer"
             className="
-              px-6
+              px-8
               py-3
-              text-sm
               font-semibold
-              tracking-[0.15em]
+              text-sm
+              tracking-[0.12em]
               uppercase
               transition
-              hover:opacity-90
+              rounded-full
             "
             style={{
               backgroundColor:

@@ -5,7 +5,6 @@ import foto2 from "../assets/foto2.jpg"
 import foto3 from "../assets/foto3.jpg"
 import foto4 from "../assets/foto4.jpg"
 import foto5 from "../assets/foto5.jpg"
-import foto6 from "../assets/foto6.jpg"
 
 function Gallery() {
 
@@ -14,8 +13,7 @@ function Gallery() {
     foto2,
     foto3,
     foto4,
-    foto5,
-    foto6
+    foto5
   ]
 
   const [current, setCurrent] = useState(0)
@@ -28,7 +26,7 @@ function Gallery() {
 
       setCurrent((prev) => (prev + 1) % photos.length)
 
-    }, 1000)
+    }, 1500)
 
     return () => clearInterval(interval)
 
@@ -53,7 +51,7 @@ function Gallery() {
             h-auto
             object-cover
             transition-all
-            duration-1000
+            duration-2000
           "
         />
 

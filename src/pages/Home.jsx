@@ -10,7 +10,11 @@ import RSVP from "../components/RSVP"
 import Footer from "../components/Footer"
 import MusicPlayer from "../components/MusicPlayer"
 
-function Home() {
+function Home({
+  audioRef,
+  isPlaying,
+  setIsPlaying
+}) {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -52,6 +56,9 @@ function Home() {
 
       <MusicPlayer
         menuOpen={menuOpen}
+        audioRef={audioRef}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
       />
 
     </div>
