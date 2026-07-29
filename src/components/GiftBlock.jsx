@@ -88,7 +88,7 @@ function GiftModal({ isOpen, onClose }) {
 
         <div
           className="
-            bg-[#1e2f5d]
+            bg-black
             rounded-[4px]
             px-8
             py-10
@@ -180,7 +180,7 @@ function GiftModal({ isOpen, onClose }) {
               w-full
               py-3
               bg-white
-              text-[#1e2f5d]
+              text-black
               px-8
               font-semibold
               text-sm
@@ -266,7 +266,7 @@ function GiftBlock() {
             className="
               w-[90px]
               h-[2px]
-              bg-[#1e2f5d]
+              bg-black
               rounded-full
               mb-8
             "
@@ -276,7 +276,7 @@ function GiftBlock() {
 
           <p
             className="
-              text-[#1e2f5d]
+              text-black
               text-[20px]
               md:text-[28px]
               leading-[1.8]
@@ -300,7 +300,7 @@ function GiftBlock() {
             className="
               w-[90px]
               h-[2px]
-              bg-[#1e2f5d]
+              bg-black
               rounded-full
               mt-8
             "
@@ -330,7 +330,7 @@ function GiftBlock() {
             py-12
           "
           style={{
-            backgroundColor: "#1e2f5d",
+            backgroundColor: "black",
             color: "#ffffff",
             fontFamily: "Montserrat, sans-serif"
           }}
@@ -388,7 +388,7 @@ function GiftBlock() {
             className="
               mt-8
               bg-white
-              text-[#1e2f5d]
+              text-black
               px-8
               py-3
               font-bold

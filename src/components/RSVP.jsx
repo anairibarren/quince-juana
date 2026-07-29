@@ -56,7 +56,7 @@ function RSVP() {
           className="
             text-[30px]
             font-extrabold
-            text-[#1e2f5d]
+            text-black
             leading-[1.15]
             uppercase
           "
@@ -72,8 +72,8 @@ function RSVP() {
         <div
           className="
             w-[200px]
-            h-[6px]
-            bg-[#a0b8e1]
+            h-[3px]
+            bg-black
             mt-[14px]
             mb-[28px]
             mx-auto
@@ -87,7 +87,7 @@ function RSVP() {
           className="
             text-[16px]
             leading-[1.5]
-            text-[#6b7280]
+            text-black
             mb-[38px]
             max-w-[700px]
             mx-auto
@@ -119,7 +119,7 @@ function RSVP() {
               inline-flex
               items-center
               gap-[10px]
-              bg-[#1e2f5d]
+              bg-black
               text-white
               text-[16px]
               font-regular

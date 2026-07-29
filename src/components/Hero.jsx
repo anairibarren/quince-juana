@@ -94,7 +94,7 @@ function Hero() {
               font-extrabold
               text-[40px]
               leading-[1.08]
-              text-[#1e2f5d]
+              text-black
               mb-6
               max-w-[700px]
               md:text-[64px]
@@ -133,7 +133,7 @@ function Hero() {
               px-8
               py-3
               rounded-full
-              bg-[#1e2f5d]
+              bg-black
               text-white
               font-semibold
               text-[16px]

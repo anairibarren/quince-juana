@@ -61,7 +61,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
           <a
             href="#hero"
             aria-label="Ir al inicio"
-            className="flex items-center gap-3 text-[#1e2f5d]"
+            className="flex items-center gap-3 text-black"
           >
 
             {/* PASAPORTE */}
@@ -98,7 +98,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
               <Icon
                 icon="mdi:airplane-takeoff"
                 width="20"
-                className="text-[#1e2f5d]"
+                className="text-black"
               />
 
               {/* MIS XV */}
@@ -106,7 +106,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
               <span
                 className="
                   text-[20px]
-                  text-[#1e2f5d]
+                  text-black
                 "
               >
                 Mis XV

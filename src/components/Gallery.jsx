@@ -32,26 +32,35 @@ function Gallery() {
 
   }, [photos.length])
 
+
   return (
 
     <section
       id="galeria"
-      className=""
+      className="m-0 p-0"
     >
 
-      {/* FOTO */}
-
-      <div className="w-full overflow-hidden">
+      <div
+        className="
+          w-full
+          overflow-hidden
+          m-0
+          p-0
+        "
+      >
 
         <img
           src={photos[current]}
           alt={`Foto del book ${current + 1}`}
           className="
+            block
             w-full
             h-auto
             object-cover
-            transition-all
-            duration-2000
+            m-0
+            p-0
+            transition-opacity
+            duration-[1500ms]
           "
         />
 

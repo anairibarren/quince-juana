@@ -52,7 +52,7 @@ function Footer() {
           className="
             text-[28px]
             md:text-[32px]
-            text-[#1e2f5d]
+            text-black
             tracking-[0.2em]
             uppercase
             font-semibold

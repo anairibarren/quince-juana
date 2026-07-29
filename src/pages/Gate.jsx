@@ -47,7 +47,7 @@ function Gate({
         items-center
         justify-center
         bg-white
-        text-[#1e2f5d]
+        text-black
         text-center
         px-6
         transition-opacity
@@ -102,7 +102,7 @@ function Gate({
         className="
           px-10
           py-4
-          bg-[#1e2f5d]
+          bg-black
           text-white
           uppercase
           tracking-[0.15em]

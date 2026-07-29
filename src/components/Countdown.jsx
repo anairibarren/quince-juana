@@ -95,7 +95,6 @@ function Countdown() {
     <section
       id="countdown"
       ref={sectionRef}
-      className="pb-8"
     >
 
       <div>
@@ -120,7 +119,7 @@ function Countdown() {
               text-[30px]
               md:text-[22px]
               tracking-[0.35em]
-              text-[#1e2f5d]
+              text-black
               font-medium
               uppercase
             "
@@ -139,7 +138,7 @@ function Countdown() {
               text-[92px]
               md:text-[110px]
               leading-none
-              text-[#1e2f5d]
+              text-black
               -mt-1
             "
             style={{
@@ -182,7 +181,7 @@ function Countdown() {
 
       <div
         className="
-          bg-[#1e2f5d]
+          bg-black
           py-10
           px-6
         "
@@ -268,7 +267,7 @@ function TimeBox({ number, label }) {
         className="
           text-4xl
           font-bold
-          text-[#1e2f5d]
+          text-black
         "
         style={{
           fontFamily: "Montserrat, sans-serif"
@@ -283,7 +282,7 @@ function TimeBox({ number, label }) {
           font-semibold
           tracking-[0.25em]
           mt-3
-          text-[#1e2f5d]
+          text-black
         "
         style={{
           fontFamily: "Montserrat, sans-serif"

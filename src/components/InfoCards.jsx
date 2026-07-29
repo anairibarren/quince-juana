@@ -22,7 +22,6 @@ function InfoBlock({
         w-full
         rounded-none
         px-8
-        mt-8
         py-12
         flex
         flex-col
@@ -106,8 +105,8 @@ function InfoBlock({
           <div
             className="
               w-[100px]
-              h-[4px]
-              bg-[#a0b8e1]
+              h-[3px]
+              bg-black
               mt-[14px]
               mb-[20px]
               mx-auto
@@ -132,13 +131,13 @@ function InfoBlock({
             style={{
               backgroundColor:
                 background === "#ffffff"
-                  ? "#1e2f5d"
+                  ? "black"
                   : "#ffffff",
 
               color:
                 background === "#ffffff"
                   ? "#ffffff"
-                  : "#1e2f5d"
+                  : "black"
             }}
           >
             COMO LLEGAR
@@ -216,7 +215,7 @@ function InfoCards() {
         {/* BLOQUE 1 — CUANDO */}
 
         <InfoBlock
-          background="#1e2f5d"
+          background="black"
           textColor="#ffffff"
           image={calendar}
           title="¿CUÁNDO?"
@@ -236,7 +235,7 @@ function InfoCards() {
 
         <InfoBlock
           background="#ffffff"
-          textColor="#1e2f5d"
+          textColor="black"
           image={pin}
           title="¿DÓNDE?"
           button={true}
@@ -252,11 +251,10 @@ function InfoCards() {
         {/* BLOQUE 3 — DRESS CODE */}
 
         <InfoBlock
-          background="#1e2f5d"
+          background="black"
           textColor="#ffffff"
           image={diamond}
           title="DRESS CODE"
-          showDivider={true}
         >
 
           <div className="space-y-3">
@@ -264,6 +262,18 @@ function InfoCards() {
             <p>
               ELEGANTE SPORT
             </p>
+
+            <div
+              className="
+                w-[100px]
+                h-[3px]
+                bg-white
+                mt-[14px]
+                mb-[20px]
+                mx-auto
+                rounded-full
+              "
+            />
 
             <p
               className="
