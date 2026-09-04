@@ -125,3 +125,7 @@ html {
 .animate-slide-right {
   animation: slideRightFade 0.8s ease-out forwards;
 }
+
+body.gift-modal-open .music-player {
+  display: none !important;
+}

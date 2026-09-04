@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Countdown from "../components/Countdown"
 import Gallery from "../components/Gallery"
@@ -9,6 +8,7 @@ import GiftBlock from "../components/GiftBlock"
 import RSVP from "../components/RSVP"
 import Footer from "../components/Footer"
 import MusicPlayer from "../components/MusicPlayer"
+import SongSuggestion from "../components/SongSuggestion"
 
 function Home({
   audioRef,
@@ -34,12 +34,6 @@ function Home({
         ${visible ? "opacity-100" : "opacity-0"}
       `}
     >
-
-      <Navbar
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-      />
-
       <Hero />
 
       <Countdown />
@@ -49,6 +43,8 @@ function Home({
       <InfoCards />
 
       <GiftBlock />
+
+      <SongSuggestion />
 
       <RSVP />
 

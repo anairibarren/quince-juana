@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react"
-import videoHero from "../assets/hero-video.mp4"
-import fotoInicio from "../assets/foto-inicio.JPG"
+// import fotoInicio from "../assets/foto-inicio.JPG"
+import fotoinicio2 from "../assets/fotoinicio2.JPG"
+
 
 function Hero() {
 
@@ -23,29 +24,19 @@ function Hero() {
       top: y,
       behavior: "smooth"
     })
-
   }
 
   return (
-
     <section
       id="hero"
-      aria-labelledby="hero-title"
-      className="
-        relative
-        overflow-hidden
-        bg-white
-        pb-10
-      "
+      className="relative w-full h-screen overflow-hidden mb-8"
     >
 
-      {/* VIDEO DE FONDO */}
+      {/* FOTO */}
 
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
+      <img
+        src={fotoinicio2}
+        alt="Juana XV"
         className="
           absolute
           inset-0
@@ -53,11 +44,7 @@ function Hero() {
           h-full
           object-cover
         "
-      >
-
-        <source src={videoHero} type="video/mp4" />
-
-      </video>
+      />
 
       {/* OVERLAY */}
 
@@ -65,24 +52,30 @@ function Hero() {
         className="
           absolute
           inset-0
-          bg-white/70
+          bg-black/35
         "
       />
 
-      {/* CONTENIDO */}
+      {/* CONTENIDO POR ENCIMA DE LA FOTO */}
 
-      <div className="relative z-10">
-
-        {/* BLOQUE TEXTO */}
+      <div
+        className="
+          relative
+          z-10
+          flex
+          items-center
+          justify-center
+          w-full
+          h-full
+          px-6
+        "
+      >
 
         <div
           className="
+            w-full
             max-w-4xl
-            mx-auto
-            px-6
-            md:px-10
-            pt-32
-            md:pt-36
+            text-left
           "
         >
 
@@ -94,9 +87,8 @@ function Hero() {
               font-extrabold
               text-[40px]
               leading-[1.08]
-              text-black
+              text-white
               mb-6
-              max-w-[700px]
               md:text-[64px]
             "
           >
@@ -110,7 +102,7 @@ function Hero() {
               text-[14px]
               leading-[1.8]
               font-medium
-              text-[#6b7280]
+              text-white
               max-w-[520px]
               mb-8
             "
@@ -141,40 +133,20 @@ function Hero() {
               max-w-[300px]
             "
           >
-
             Despeguemos
 
             <Icon
               icon="mdi:airplane-takeoff"
               width="20"
             />
-
           </button>
-
-        </div>
-
-        {/* IMAGEN FULL WIDTH */}
-
-        <div className="mt-20">
-
-          <img
-            src={fotoInicio}
-            alt=""
-            className="
-              w-full
-              h-auto
-              object-cover
-            "
-          />
 
         </div>
 
       </div>
 
     </section>
-
   )
-
 }
 
 export default Hero

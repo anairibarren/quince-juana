@@ -43,6 +43,7 @@ function MusicPlayer({
       onClick={toggleMusic}
       aria-label="Controlar música"
       className={`
+        music-player
         fixed
         right-[40px]
         bottom-[50px]

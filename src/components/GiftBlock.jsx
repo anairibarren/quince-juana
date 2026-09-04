@@ -10,6 +10,9 @@ function GiftModal({ isOpen, onClose }) {
 
   const [copied, setCopied] = useState(false)
 
+
+  // COPIAR ALIAS
+
   const handleCopy = async () => {
 
     try {
@@ -31,6 +34,7 @@ function GiftModal({ isOpen, onClose }) {
     }
 
   }
+
 
   // CERRAR CON ESC
 
@@ -60,7 +64,32 @@ function GiftModal({ isOpen, onClose }) {
 
   }, [isOpen, onClose])
 
+
+  // OCULTAR MUSIC PLAYER CUANDO LA MODAL ESTÁ ABIERTA
+
+  useEffect(() => {
+
+    if (isOpen) {
+
+      document.body.classList.add("gift-modal-open")
+
+    } else {
+
+      document.body.classList.remove("gift-modal-open")
+
+    }
+
+    return () => {
+
+      document.body.classList.remove("gift-modal-open")
+
+    }
+
+  }, [isOpen])
+
+
   if (!isOpen) return null
+
 
   return (
 
@@ -73,15 +102,19 @@ function GiftModal({ isOpen, onClose }) {
         flex
         items-center
         justify-center
-        bg-black/60
+        bg-black/70
         backdrop-blur-sm
-        px-4
+        px-6
       "
     >
 
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-[420px]"
+        className="
+          relative
+          w-full
+          max-w-[420px]
+        "
       >
 
         {/* CUADRADO PRINCIPAL */}
@@ -89,11 +122,10 @@ function GiftModal({ isOpen, onClose }) {
         <div
           className="
             bg-black
-            rounded-[4px]
             px-8
             py-10
             text-center
-            shadow-xl
+            shadow-2xl
           "
         >
 
@@ -108,7 +140,7 @@ function GiftModal({ isOpen, onClose }) {
             "
           >
 
-            {/* GIFT */}
+            {/* ICONO */}
 
             <img
               src={gift}
@@ -118,9 +150,10 @@ function GiftModal({ isOpen, onClose }) {
                 h-[70px]
                 object-contain
                 mx-auto
-                mb-6
+                mb-7
               "
             />
+
 
             {/* TITULO */}
 
@@ -129,8 +162,9 @@ function GiftModal({ isOpen, onClose }) {
                 text-[22px]
                 font-semibold
                 text-white
-                tracking-[0.2em]
-                mb-6
+                uppercase
+                tracking-[0.18em]
+                mb-8
               "
               style={{
                 fontFamily: "Montserrat, sans-serif"
@@ -139,29 +173,69 @@ function GiftModal({ isOpen, onClose }) {
               REGALO
             </h3>
 
+
             {/* DATOS */}
 
-            <div className="space-y-6">
+            <div
+              className="
+                space-y-7
+                text-white
+              "
+              style={{
+                fontFamily: "Montserrat, sans-serif"
+              }}
+            >
+
+              {/* ALIAS */}
 
               <div>
 
-                <p className="text-sm text-white/80">
-                  ALIAS:
+                <p
+                  className="
+                    text-[12px]
+                    uppercase
+                    tracking-[0.15em]
+                    text-white/70
+                    mb-2
+                  "
+                >
+                  ALIAS
                 </p>
 
-                <p className="text-lg text-white">
+                <p
+                  className="
+                    text-[18px]
+                    font-semibold
+                  "
+                >
                   {alias}
                 </p>
 
               </div>
 
+
+              {/* CUENTA */}
+
               <div>
 
-                <p className="text-sm text-white/80">
-                  CUENTA:
+                <p
+                  className="
+                    text-[12px]
+                    uppercase
+                    tracking-[0.15em]
+                    text-white/70
+                    mb-2
+                  "
+                >
+                  CUENTA
                 </p>
 
-                <p className="text-lg text-white">
+                <p
+                  className="
+                    text-[18px]
+                    font-semibold
+                  "
+                >
                   {banco}
                 </p>
 
@@ -170,6 +244,7 @@ function GiftModal({ isOpen, onClose }) {
             </div>
 
           </div>
+
 
           {/* BOTON COPIAR */}
 
@@ -181,16 +256,14 @@ function GiftModal({ isOpen, onClose }) {
               py-3
               bg-white
               text-black
-              px-8
               font-semibold
               text-sm
-              tracking-[0.10rem]
-              uppercase              
-              rounded-full
+              uppercase
             "
           >
             {copied ? "Alias copiado" : "Copiar alias"}
           </button>
+
 
           {/* BOTON CERRAR */}
 
@@ -199,17 +272,13 @@ function GiftModal({ isOpen, onClose }) {
             className="
               mt-4
               w-full
+              py-3
               border
               border-white
               text-white
-              text-md
-              px-8
-              py-3
               font-semibold
-              tracking-[0.10rem]
               text-sm
-              uppercase              
-              rounded-full
+              uppercase
             "
           >
             Cerrar
@@ -225,6 +294,7 @@ function GiftModal({ isOpen, onClose }) {
 
 }
 
+
 function GiftBlock() {
 
   const [isOpen, setIsOpen] = useState(false)
@@ -233,13 +303,12 @@ function GiftBlock() {
 
     <section
       id="gift"
-      className="
-        py-0
-        mb-8
-      "
+      className="py-0 mb-8"
     >
 
-      {/* BLOQUE FRASE */}
+      {/* ================================================= */}
+      {/* FRASE — NO TOCAR */}
+      {/* ================================================= */}
 
       <div
         className="
@@ -311,27 +380,27 @@ function GiftBlock() {
       </div>
 
 
+      {/* ================================================= */}
       {/* BLOQUE REGALO */}
+      {/* ================================================= */}
 
       <div
         className="
-          flex
-          justify-center
+          bg-black
+          pt-14
+          pb-20
+          px-6
         "
       >
 
         <div
           className="
-            max-w-[700px]
-            w-full
+            max-w-2xl
             mx-auto
-            px-6
             text-center
-            py-12
+            text-white
           "
           style={{
-            backgroundColor: "black",
-            color: "#ffffff",
             fontFamily: "Montserrat, sans-serif"
           }}
         >
@@ -342,38 +411,35 @@ function GiftBlock() {
             src={gift}
             alt="Regalo"
             className="
-              w-[90px]
-              h-[90px]
-              md:w-[110px]
-              md:h-[110px]
+              w-[85px]
+              h-[85px]
               object-contain
               mx-auto
-              mb-6
+              mb-8
             "
           />
+
 
           {/* TITULO */}
 
           <h2
             className="
-              text-[22px]
-              md:text-[24px]
+              text-[28px]
               font-semibold
-              tracking-[0.2em]
-              mb-6
+              uppercase
+              tracking-[0.10em]
+              mb-5
             "
           >
             REGALO
           </h2>
+
 
           {/* TEXTO */}
 
           <p
             className="
               text-[16px]
-              md:text-[18px]
-              leading-[1.7]
-              space-y-2
               max-w-[520px]
               mx-auto
             "
@@ -381,22 +447,19 @@ function GiftBlock() {
             Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta.
           </p>
 
+
           {/* BOTON */}
 
           <button
             onClick={() => setIsOpen(true)}
             className="
-              mt-8
+              mt-10
+              px-4
+              py-3
               bg-white
               text-black
-              px-8
-              py-3
-              font-bold
-              text-sm
-              tracking-[0.12em]
               uppercase
-              transition
-              rounded-full
+              font-semibold
             "
           >
             VER CUENTA
@@ -405,6 +468,9 @@ function GiftBlock() {
         </div>
 
       </div>
+
+
+      {/* MODAL */}
 
       <GiftModal
         isOpen={isOpen}
