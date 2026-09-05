@@ -334,9 +334,8 @@ function GiftBlock() {
           <div
             className="
               w-[90px]
-              h-[2px]
+              h-[3px]
               bg-black
-              rounded-full
               mb-8
             "
           />
@@ -358,7 +357,7 @@ function GiftBlock() {
             }}
           >
             Hagamos que sea una noche{" "}
-            <span className="font-extrabold">
+            <span className="font-bold">
               ¡inolvidable!
             </span>
           </p>
@@ -368,9 +367,8 @@ function GiftBlock() {
           <div
             className="
               w-[90px]
-              h-[2px]
+              h-[3px]
               bg-black
-              rounded-full
               mt-8
             "
           />

@@ -12,19 +12,14 @@ function Footer() {
       <img
         src={foto}
         alt="Juana"
-        className="
-          w-full
-          h-auto
-          object-cover
-        "
+        className="mb-4"
       />
 
       {/* CONTENIDO */}
 
       <div
         className="
-          mt-8
-          mb-24
+          mb-14
           bg-white
           flex
           flex-col
@@ -48,20 +43,18 @@ function Footer() {
 
         {/* TEXTO */}
 
-        <p
-          className="
-            text-[28px]
-            md:text-[32px]
-            text-black
-            tracking-[0.2em]
-            uppercase
-            font-semibold
-          "
-          style={{
-            fontFamily: "Montserrat, sans-serif"
-          }}
+        <h2
+          className="text-[40px] uppercase text-black"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Te espero
+        </h2>
+
+        <p
+          className="mt-3 uppercase tracking-[0.35em] text-black text-[14px] md:text-[14px]"
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+        >
+          10 · OCTUBRE · 2026
         </p>
 
       </div>

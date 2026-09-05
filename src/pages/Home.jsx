@@ -4,6 +4,7 @@ import Hero from "../components/Hero"
 import Countdown from "../components/Countdown"
 import Gallery from "../components/Gallery"
 import InfoCards from "../components/InfoCards"
+import PhotoDivider from "../components/PhotoDivider"
 import GiftBlock from "../components/GiftBlock"
 import RSVP from "../components/RSVP"
 import Footer from "../components/Footer"
@@ -41,6 +42,8 @@ function Home({
       <Gallery />
 
       <InfoCards />
+
+      <PhotoDivider />
 
       <GiftBlock />
 

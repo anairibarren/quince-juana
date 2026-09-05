@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 import foto1 from "../assets/foto1.jpg"
-import foto2 from "../assets/foto2.jpg"
+import foto6 from "../assets/foto6.jpg"
 import foto3 from "../assets/foto3.jpg"
 import foto4 from "../assets/foto4.jpg"
 import foto5 from "../assets/foto5.jpg"
@@ -10,7 +10,7 @@ function Gallery() {
 
   const photos = [
     foto1,
-    foto2,
+    foto6,
     foto3,
     foto4,
     foto5

@@ -97,7 +97,7 @@ function Countdown() {
       ref={sectionRef}
     >
 
-      <div>
+      <div className="mt-14">
 
         {/* TITULO */}
 
@@ -203,10 +203,9 @@ function Countdown() {
           <div
             className="
               w-[90px]
-              h-[2px]
+              h-[3px]
               bg-white
-              rounded-full
-              mb-8
+              mb-4
             "
           />
 
@@ -218,7 +217,6 @@ function Countdown() {
               text-[18px]
               md:text-[22px]
               leading-[2]
-              tracking-[0.08em]
               uppercase
               max-w-3xl
             "
@@ -234,10 +232,9 @@ function Countdown() {
           <div
             className="
               w-[90px]
-              h-[2px]
+              h-[3px]
               bg-white
-              rounded-full
-              mt-8
+              mt-4
             "
           />
 

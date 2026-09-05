@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react"
-// import fotoInicio from "../assets/foto-inicio.JPG"
-import fotoinicio2 from "../assets/fotoinicio2.JPG"
+//import fotoinicio2 from "../assets/fotoinicio2.jpeg"
+import fotoinicio2 from "../assets/fotoinicio1.jpeg"
 
 
 function Hero() {
@@ -67,7 +67,8 @@ function Hero() {
           justify-center
           w-full
           h-full
-          px-6
+          px-8
+          mt-20
         "
       >
 
@@ -88,7 +89,7 @@ function Hero() {
               text-[40px]
               leading-[1.08]
               text-white
-              mb-6
+              mb-6            
               md:text-[64px]
             "
           >

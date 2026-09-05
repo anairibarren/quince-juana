@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react"
-import sobre from "../assets/rsvp.gif"
+import sobre from "../assets/rsvp.webp"
 
 function RSVP() {
 
@@ -16,13 +16,12 @@ function RSVP() {
     <section
       id="asistencia"
       className="
-        bg-white
+        bg-black
         flex
         justify-center
         py-[50px]
         transition-all
         duration-700
-        mb-8
       "
     >
 
@@ -45,6 +44,7 @@ function RSVP() {
             className="
               w-[120px]
               animate-bounce
+              mt-8
             "
           />
 
@@ -56,7 +56,7 @@ function RSVP() {
           className="
             text-[30px]
             font-extrabold
-            text-black
+            text-white
             leading-[1.15]
             uppercase
           "
@@ -73,11 +73,10 @@ function RSVP() {
           className="
             w-[200px]
             h-[3px]
-            bg-black
+            bg-white
             mt-[14px]
             mb-[28px]
-            mx-auto
-            rounded-full
+            mx-auto            
           "
         />
 
@@ -87,7 +86,7 @@ function RSVP() {
           className="
             text-[16px]
             leading-[1.5]
-            text-black
+            text-white
             mb-[38px]
             max-w-[700px]
             mx-auto
@@ -109,7 +108,7 @@ function RSVP() {
 
         {/* BOTON */}
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-10">
 
           <a
             href={whatsappLink}
@@ -119,8 +118,8 @@ function RSVP() {
               inline-flex
               items-center
               gap-[10px]
-              bg-black
-              text-white
+              bg-white
+              text-black
               text-[16px]
               font-regular
               rounded-full
