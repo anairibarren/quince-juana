@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react"
 
-import foto1 from "../assets/foto1.jpg"
-import foto6 from "../assets/foto6.jpg"
-import foto3 from "../assets/foto3.jpg"
-import foto4 from "../assets/foto4.jpg"
-import foto5 from "../assets/foto5.jpg"
+import foto1 from "../assets/foto1.JPG"
+import foto3 from "../assets/foto3.JPG"
+import foto4 from "../assets/foto4.JPG"
+import foto5 from "../assets/foto5.JPG"
+import foto6 from "../assets/foto6.JPG"
+
 
 function Gallery() {
 
   const photos = [
     foto1,
-    foto6,
     foto3,
     foto4,
-    foto5
+    foto5,
+    foto6
   ]
 
+
   const [current, setCurrent] = useState(0)
+
 
   // AUTO SLIDE
 
@@ -71,5 +74,6 @@ function Gallery() {
   )
 
 }
+
 
 export default Gallery
