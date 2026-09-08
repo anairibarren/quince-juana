@@ -1,41 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-  font-family: 'Allura';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/allura/v23/9oRPNYsQpS4zjuA_iwgT.ttf) format('truetype');
-}
 
 
 * {
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #0f172a;
+  color: #444b65;
   min-height: 100vh;
   background-color: white;
   margin: 0;
 }
+
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+
 button {
   font-family: inherit;
   cursor: pointer;
 }
 
+
 .perspective {
   perspective: 1200px;
 }
+
 
 .flip-card {
   transform-style: preserve-3d;
@@ -43,9 +42,11 @@ button {
   position: relative;
 }
 
+
 .flip-card.flipped {
   transform: rotateY(180deg);
 }
+
 
 .flip-face {
   backface-visibility: hidden;
@@ -53,17 +54,21 @@ button {
   inset: 0;
 }
 
+
 .flip-back {
   transform: rotateY(180deg);
 }
+
 
 html {
   scroll-behavior: smooth;
 }
 
+
 /* ANIMACION ENTRADA DESDE LA IZQUIERDA */
 
 @keyframes slideLeftFade {
+
   from {
     opacity: 0;
     transform: translateX(-50px);
@@ -73,37 +78,19 @@ html {
     opacity: 1;
     transform: translateX(0);
   }
+
 }
+
 
 .animate-slide-left {
   animation: slideLeftFade 0.8s ease-out forwards;
 }
-
-
-
-/* ENTRADA DESDE IZQUIERDA */
-
-@keyframes slideLeftFade {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-left {
-  animation: slideLeftFade 0.8s ease-out forwards;
-}
-
 
 
 /* ENTRADA DESDE DERECHA */
 
 @keyframes slideRightFade {
+
   from {
     opacity: 0;
     transform: translateX(50px);
@@ -113,11 +100,14 @@ html {
     opacity: 1;
     transform: translateX(0);
   }
+
 }
+
 
 .animate-slide-right {
   animation: slideRightFade 0.8s ease-out forwards;
 }
+
 
 body.gift-modal-open .music-player {
   display: none !important;

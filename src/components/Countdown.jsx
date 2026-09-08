@@ -211,8 +211,6 @@ function Countdown() {
             className="
               text-white
               text-[18px]
-              md:text-[22px]
-              leading-[2]
               uppercase
               max-w-3xl
             "

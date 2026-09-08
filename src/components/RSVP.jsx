@@ -54,7 +54,7 @@ function RSVP() {
 
         <h2
           className="
-            text-[30px]
+            text-[25px]
             font-semibold
             text-white
             leading-[1.15]
@@ -88,8 +88,7 @@ function RSVP() {
             leading-[1.5]
             text-white
             mb-[38px]
-            max-w-[700px]
-            mx-auto
+            px-4
           "
           style={{
             fontFamily: "Montserrat, sans-serif"

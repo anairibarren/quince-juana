@@ -85,7 +85,7 @@ function Hero() {
             id="hero-title"
             className="
               font-bold
-              text-[40px]
+              text-[35px]
               leading-[1.08]
               text-white
               mb-6            
@@ -103,13 +103,11 @@ function Hero() {
               leading-[1.8]
               font-medium
               text-white
-              max-w-[520px]
+              max-w-[600px]
               mb-8
             "
           >
-            Te invito a celebrar una noche única.
-            Será un momento lleno de magia,
-            sueños y recuerdos inolvidables.
+            Te invito a celebrar una noche única. Será un momento lleno de magia, sueños y recuerdos inolvidables.
           </p>
 
           {/* BOTON */}
