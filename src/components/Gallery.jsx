@@ -10,10 +10,10 @@ import foto6 from "../assets/foto6.JPG"
 function Gallery() {
 
   const photos = [
-    foto1,
+    foto5,
     foto3,
     foto4,
-    foto5,
+    foto1,
     foto6
   ]
 
