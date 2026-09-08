@@ -121,7 +121,7 @@ function GiftModal({ isOpen, onClose }) {
 
         <div
           className="
-            bg-black
+            bg-[#444b65]
             px-8
             py-10
             text-center
@@ -163,8 +163,7 @@ function GiftModal({ isOpen, onClose }) {
                 font-semibold
                 text-white
                 uppercase
-                tracking-[0.18em]
-                mb-8
+                mb-4
               "
               style={{
                 fontFamily: "Montserrat, sans-serif"
@@ -194,7 +193,7 @@ function GiftModal({ isOpen, onClose }) {
                   className="
                     text-[12px]
                     uppercase
-                    tracking-[0.15em]
+                    tracking-[0.10em]
                     text-white/70
                     mb-2
                   "
@@ -255,7 +254,7 @@ function GiftModal({ isOpen, onClose }) {
               w-full
               py-3
               bg-white
-              text-black
+              text-[#444b65]
               font-semibold
               text-sm
               uppercase
@@ -335,7 +334,7 @@ function GiftBlock() {
             className="
               w-[90px]
               h-[3px]
-              bg-black
+              bg-[#444b65]
               mb-8
             "
           />
@@ -344,13 +343,10 @@ function GiftBlock() {
 
           <p
             className="
-              text-black
+              text-[#444b65]
               text-[20px]
-              md:text-[28px]
               leading-[1.8]
-              tracking-[0.08em]
               uppercase
-              max-w-3xl
             "
             style={{
               fontFamily: "Montserrat, sans-serif"
@@ -368,7 +364,7 @@ function GiftBlock() {
             className="
               w-[90px]
               h-[3px]
-              bg-black
+              bg-[#444b65]
               mt-8
             "
           />
@@ -384,7 +380,7 @@ function GiftBlock() {
 
       <div
         className="
-          bg-black
+          bg-[#444b65]
           pt-14
           pb-20
           px-6
@@ -455,9 +451,9 @@ function GiftBlock() {
               px-4
               py-3
               bg-white
-              text-black
+              text-[#444b65]
               uppercase
-              font-semibold
+              font-bold
             "
           >
             VER CUENTA

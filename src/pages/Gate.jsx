@@ -47,7 +47,7 @@ function Gate({
         items-center
         justify-center
         bg-white
-        text-black
+        text-[#444b65]
         text-center
         px-6
         transition-opacity
@@ -62,7 +62,7 @@ function Gate({
         className="
           text-[35px]
           md:text-[58px]
-          font-semibold
+          font-medium
           tracking-[0.15em]
           uppercase
           mb-4
@@ -71,7 +71,7 @@ function Gate({
           fontFamily: "Montserrat, sans-serif"
         }}
       >
-        Mis XV Juana
+        Mis XV <strong className="font-bold">Juana</strong>
       </h1>
 
       {/* FRASE */}
@@ -79,12 +79,12 @@ function Gate({
       <p
         className="
           text-[12px]
-          md:text-[16px]
           leading-[2]
           tracking-[0.2em]
           uppercase
           max-w-[800px]
           mb-12
+          font-medium
         "
         style={{
           fontFamily: "Montserrat, sans-serif"
@@ -102,7 +102,7 @@ function Gate({
         className="
           px-10
           py-4
-          bg-black
+          bg-[#444b65]
           text-white
           uppercase
           tracking-[0.15em]

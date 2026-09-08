@@ -1,5 +1,5 @@
 import foto from "../assets/footer-photo.jpg"
-import avion from "../assets/avion.webp"
+import avion from "../assets/finalavion.webp"
 
 function Footer() {
 
@@ -44,14 +44,14 @@ function Footer() {
         {/* TEXTO */}
 
         <h2
-          className="text-[40px] uppercase text-black"
+          className="text-[40px] uppercase font-medium text-[#444b65]"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Te espero
         </h2>
 
         <p
-          className="mt-3 uppercase tracking-[0.35em] text-black text-[14px] md:text-[14px]"
+          className="mt-3 font-medium uppercase tracking-[0.35em] text-[#444b65] text-[14px] md:text-[14px]"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           10 · OCTUBRE · 2026

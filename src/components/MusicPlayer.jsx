@@ -50,7 +50,7 @@ function MusicPlayer({
         w-[60px]
         h-[60px]
         rounded-full
-        bg-black
+        bg-[#444b65]
         text-white
         flex
         items-center

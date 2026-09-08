@@ -117,9 +117,7 @@ function Countdown() {
           <span
             className="
               text-[30px]
-              md:text-[22px]
               tracking-[0.35em]
-              text-black
               font-medium
               uppercase
             "
@@ -136,9 +134,7 @@ function Countdown() {
           <h2
             className="
               text-[92px]
-              md:text-[110px]
               leading-none
-              text-black
               -mt-1
             "
             style={{
@@ -181,7 +177,7 @@ function Countdown() {
 
       <div
         className="
-          bg-black
+          bg-[#444b65]
           py-10
           px-6
         "
@@ -264,7 +260,7 @@ function TimeBox({ number, label }) {
         className="
           text-4xl
           font-bold
-          text-black
+          text-[#444b65]
         "
         style={{
           fontFamily: "Montserrat, sans-serif"
@@ -279,7 +275,7 @@ function TimeBox({ number, label }) {
           font-semibold
           tracking-[0.25em]
           mt-3
-          text-black
+          text-[#444b65]
         "
         style={{
           fontFamily: "Montserrat, sans-serif"

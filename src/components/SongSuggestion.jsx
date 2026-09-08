@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import suggestion from "../assets/suggestion.webp"
+import suggestion from "../assets/cancion.webp"
 
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyZ7l9cAgmVD9lXTcdWngIX6LgZ4iV7doiZEQBY9CbWgDRHmiYezX6POhOBJAXxwjKo/exec"
@@ -112,10 +112,9 @@ function SongSuggestion() {
         <h2
           className="
             text-[28px]
-            md:text-[34px]
             font-semibold
             uppercase
-            text-black
+            text-[#444b65]
           "
         >
           ¿Qué canción no puede faltar?
@@ -126,9 +125,9 @@ function SongSuggestion() {
 
         <div
           className="
-            w-40
+            w-[100px]
             h-[3px]
-            bg-black
+            bg-[#444b65]
             mx-auto
             my-5
           "
@@ -140,7 +139,6 @@ function SongSuggestion() {
         <p
           className="
             text-[16px]
-            md:text-[17px]
             leading-8
             text-black
             mb-10
@@ -214,7 +212,7 @@ function SongSuggestion() {
             type="submit"
             disabled={loading}
             className="
-              bg-black
+              bg-[#444b65]
               text-white
               px-4
               py-3

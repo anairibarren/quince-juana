@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 
 import calendar from "../assets/calendar.WEBP"
-import pin from "../assets/pin.webp"
+import pin from "../assets/pin.gif"
 import diamond from "../assets/diamond.WEBP"
 
 function InfoBlock({
@@ -79,7 +79,7 @@ function InfoBlock({
             ${
               light
                 ? "text-white"
-                : "text-black"
+                : "text-[#444b65]"
             }
           `}
         >
@@ -94,7 +94,7 @@ function InfoBlock({
             ${
               light
                 ? "text-white"
-                : "text-black"
+                : "text-[#444b65]"
             }
           `}
         >
@@ -115,7 +115,7 @@ function InfoBlock({
                 ${
                   light
                     ? "bg-white"
-                    : "bg-black"
+                    : "bg-[#444b65]"
                 }
               `}
             />
@@ -127,7 +127,7 @@ function InfoBlock({
               className="
                 px-4
                 py-3
-                bg-black
+                bg-[#444b65]
                 text-white
                 font-semibold
                 text-md
@@ -202,7 +202,7 @@ function InfoCards() {
       {/* CUANDO */}
 
       <InfoBlock
-        background="#000000"
+        background="#444b65"
         image={calendar}
         title="¿CUÁNDO?"
         delay={0}
@@ -243,18 +243,13 @@ function InfoCards() {
       {/* DRESS CODE */}
 
         <InfoBlock
-          background="#000000"
+          background="#444b65"
           image={diamond}
           title="DRESS CODE"
           delay={300}
           isVisible={isVisible}
           light={true}
         >
-
-          <p className="font-semibold uppercase mb-5">
-            Elegante sport
-          </p>
-
           <div
             className="
               w-[100px]
@@ -266,12 +261,15 @@ function InfoCards() {
             "
           />
 
+          <p className="font-medium uppercase mb-5">
+            Elegante sport
+          </p>
+
           <p
             className="
               text-[14px]
-              font-medium
-              max-w-[280px]
               mx-auto
+              mb-4
             "
           >
             Evitar los colores:

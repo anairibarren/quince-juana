@@ -16,7 +16,7 @@ function RSVP() {
     <section
       id="asistencia"
       className="
-        bg-black
+        bg-[#444b65]
         flex
         justify-center
         py-[50px]
@@ -55,7 +55,7 @@ function RSVP() {
         <h2
           className="
             text-[30px]
-            font-extrabold
+            font-semibold
             text-white
             leading-[1.15]
             uppercase
@@ -118,17 +118,13 @@ function RSVP() {
               inline-flex
               items-center
               gap-[10px]
-              bg-white
-              text-black
               text-[16px]
-              font-regular
-              rounded-full
+               bg-white
+              text-[#444b65]
+              uppercase
+              font-bold
               px-9
               py-4
-              font-semibold
-              text-sm
-              tracking-[0.10rem]
-              uppercase
               cursor-pointer
             "
             style={{

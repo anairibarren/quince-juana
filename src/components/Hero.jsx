@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react"
-//import fotoinicio2 from "../assets/fotoinicio2.jpeg"
 import fotoinicio2 from "../assets/fotoinicio1.jpeg"
 
 
@@ -85,7 +84,7 @@ function Hero() {
           <h1
             id="hero-title"
             className="
-              font-extrabold
+              font-bold
               text-[40px]
               leading-[1.08]
               text-white
