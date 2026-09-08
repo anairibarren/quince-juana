@@ -29,22 +29,23 @@ function RSVP() {
         className="
           max-w-[900px]
           w-full
-          px-6
+          px-4
           text-center
         "
       >
 
         {/* ANIMACION SOBRE */}
 
-        <div className="flex justify-center mb-[30px]">
+        <div className="flex justify-center">
 
           <img
             src={sobre}
             alt="Confirmar asistencia"
             className="
               w-[120px]
+              mb-[10px]
               animate-bounce
-              mt-8
+              mt-4
             "
           />
 
@@ -54,7 +55,7 @@ function RSVP() {
 
         <h2
           className="
-            text-[25px]
+            text-[20px]
             font-semibold
             text-white
             leading-[1.15]
@@ -74,8 +75,8 @@ function RSVP() {
             w-[200px]
             h-[3px]
             bg-white
-            mt-[14px]
-            mb-[28px]
+            mt-[20px]
+            mb-[20px]
             mx-auto            
           "
         />
@@ -85,7 +86,6 @@ function RSVP() {
         <div
           className="
             text-[16px]
-            leading-[1.5]
             text-white
             mb-[38px]
             px-4
@@ -95,11 +95,11 @@ function RSVP() {
           }}
         >
 
-          <p className="uppercase tracking-[0.08em]">
+          <p className="uppercase">
             Antes del 30 de septiembre 2026
           </p>
 
-          <p className="text-sm mt-2">
+          <p className="text-md mt-2">
             En caso de tener alguna restricción alimentaria, por favor informarlo al confirmar asistencia.
           </p>
 

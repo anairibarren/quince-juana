@@ -119,6 +119,7 @@ function Countdown() {
               text-[30px]
               tracking-[0.35em]
               font-medium
+              text-black
               uppercase
             "
             style={{
@@ -134,6 +135,7 @@ function Countdown() {
           <h2
             className="
               text-[92px]
+              text-black
               leading-none
               -mt-1
             "
@@ -212,7 +214,6 @@ function Countdown() {
               text-white
               text-[18px]
               uppercase
-              max-w-3xl
             "
             style={{
               fontFamily: "Montserrat, sans-serif"

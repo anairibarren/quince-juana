@@ -139,9 +139,8 @@ function SongSuggestion() {
         <p
           className="
             text-[16px]
-            max-w-6xl
             text-black
-            px-8
+            px-[1.5rem]
             mb-10
           "
         >

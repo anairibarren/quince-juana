@@ -85,7 +85,7 @@ function Hero() {
             id="hero-title"
             className="
               font-bold
-              text-[35px]
+              text-[30px]
               leading-[1.08]
               text-white
               mb-6            

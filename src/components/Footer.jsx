@@ -44,7 +44,7 @@ function Footer() {
         {/* TEXTO */}
 
         <h2
-          className="text-[40px] uppercase font-medium text-[#444b65]"
+          className="text-[30px] uppercase font-medium text-[#444b65]"
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Te espero

@@ -109,9 +109,9 @@ function InfoBlock({
 
             <div
               className={`
-                w-[100px]
+               w-[100px]
                 h-[3px]
-                mb-6
+                mb-4
                 ${
                   light
                     ? "bg-white"
@@ -256,7 +256,6 @@ function InfoCards() {
               h-[3px]
               bg-white
               mx-auto
-              my-5
               mb-4
             "
           />
